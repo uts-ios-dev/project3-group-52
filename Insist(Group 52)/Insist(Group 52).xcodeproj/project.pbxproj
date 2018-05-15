@@ -7,17 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06CE86E520AAA8C200EE5FAB /* Insist.h in Headers */ = {isa = PBXBuildFile; fileRef = 06CE86E320AAA8C200EE5FAB /* Insist.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06828ED220AAAA9500CB8D26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06828ED120AAAA9500CB8D26 /* AppDelegate.swift */; };
+		06828ED420AAAA9500CB8D26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06828ED320AAAA9500CB8D26 /* ViewController.swift */; };
+		06828ED720AAAA9500CB8D26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06828ED520AAAA9500CB8D26 /* Main.storyboard */; };
+		06828EDA20AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06828ED820AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodeld */; };
+		06828EDC20AAAA9600CB8D26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06828EDB20AAAA9600CB8D26 /* Assets.xcassets */; };
+		06828EDF20AAAA9600CB8D26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06828EDD20AAAA9600CB8D26 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06CE86E020AAA8C200EE5FAB /* Insist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Insist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06CE86E320AAA8C200EE5FAB /* Insist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Insist.h; sourceTree = "<group>"; };
-		06CE86E420AAA8C200EE5FAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06828ECE20AAAA9500CB8D26 /* Insist(Group 52).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insist(Group 52).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06828ED120AAAA9500CB8D26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		06828ED320AAAA9500CB8D26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06828ED620AAAA9500CB8D26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06828ED920AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Insist_Group_52_.xcdatamodel; sourceTree = "<group>"; };
+		06828EDB20AAAA9600CB8D26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06828EDE20AAAA9600CB8D26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		06828EE020AAAA9600CB8D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		06CE86DC20AAA8C200EE5FAB /* Frameworks */ = {
+		06828ECB20AAAA9400CB8D26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -27,117 +37,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06CE86D620AAA8C200EE5FAB = {
+		06828EC520AAAA9400CB8D26 = {
 			isa = PBXGroup;
 			children = (
-				06CE86E220AAA8C200EE5FAB /* Insist */,
-				06CE86E120AAA8C200EE5FAB /* Products */,
+				06828ED020AAAA9500CB8D26 /* Insist(Group 52) */,
+				06828ECF20AAAA9500CB8D26 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		06CE86E120AAA8C200EE5FAB /* Products */ = {
+		06828ECF20AAAA9500CB8D26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06CE86E020AAA8C200EE5FAB /* Insist.framework */,
+				06828ECE20AAAA9500CB8D26 /* Insist(Group 52).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		06CE86E220AAA8C200EE5FAB /* Insist */ = {
+		06828ED020AAAA9500CB8D26 /* Insist(Group 52) */ = {
 			isa = PBXGroup;
 			children = (
-				06CE86E320AAA8C200EE5FAB /* Insist.h */,
-				06CE86E420AAA8C200EE5FAB /* Info.plist */,
+				06828ED120AAAA9500CB8D26 /* AppDelegate.swift */,
+				06828ED320AAAA9500CB8D26 /* ViewController.swift */,
+				06828ED520AAAA9500CB8D26 /* Main.storyboard */,
+				06828EDB20AAAA9600CB8D26 /* Assets.xcassets */,
+				06828EDD20AAAA9600CB8D26 /* LaunchScreen.storyboard */,
+				06828EE020AAAA9600CB8D26 /* Info.plist */,
+				06828ED820AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodeld */,
 			);
-			path = Insist;
+			path = "Insist(Group 52)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		06CE86DD20AAA8C200EE5FAB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06CE86E520AAA8C200EE5FAB /* Insist.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		06CE86DF20AAA8C200EE5FAB /* Insist */ = {
+		06828ECD20AAAA9400CB8D26 /* Insist(Group 52) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06CE86E820AAA8C200EE5FAB /* Build configuration list for PBXNativeTarget "Insist" */;
+			buildConfigurationList = 06828EE320AAAA9600CB8D26 /* Build configuration list for PBXNativeTarget "Insist(Group 52)" */;
 			buildPhases = (
-				06CE86DB20AAA8C200EE5FAB /* Sources */,
-				06CE86DC20AAA8C200EE5FAB /* Frameworks */,
-				06CE86DD20AAA8C200EE5FAB /* Headers */,
-				06CE86DE20AAA8C200EE5FAB /* Resources */,
+				06828ECA20AAAA9400CB8D26 /* Sources */,
+				06828ECB20AAAA9400CB8D26 /* Frameworks */,
+				06828ECC20AAAA9400CB8D26 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Insist;
-			productName = Insist;
-			productReference = 06CE86E020AAA8C200EE5FAB /* Insist.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "Insist(Group 52)";
+			productName = "Insist(Group 52)";
+			productReference = 06828ECE20AAAA9500CB8D26 /* Insist(Group 52).app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		06CE86D720AAA8C200EE5FAB /* Project object */ = {
+		06828EC620AAAA9400CB8D26 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Shiwei Lin";
 				TargetAttributes = {
-					06CE86DF20AAA8C200EE5FAB = {
+					06828ECD20AAAA9400CB8D26 = {
 						CreatedOnToolsVersion = 9.3.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 06CE86DA20AAA8C200EE5FAB /* Build configuration list for PBXProject "Insist" */;
+			buildConfigurationList = 06828EC920AAAA9400CB8D26 /* Build configuration list for PBXProject "Insist(Group 52)" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 06CE86D620AAA8C200EE5FAB;
-			productRefGroup = 06CE86E120AAA8C200EE5FAB /* Products */;
+			mainGroup = 06828EC520AAAA9400CB8D26;
+			productRefGroup = 06828ECF20AAAA9500CB8D26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				06CE86DF20AAA8C200EE5FAB /* Insist */,
+				06828ECD20AAAA9400CB8D26 /* Insist(Group 52) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		06CE86DE20AAA8C200EE5FAB /* Resources */ = {
+		06828ECC20AAAA9400CB8D26 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06828EDF20AAAA9600CB8D26 /* LaunchScreen.storyboard in Resources */,
+				06828EDC20AAAA9600CB8D26 /* Assets.xcassets in Resources */,
+				06828ED720AAAA9500CB8D26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		06CE86DB20AAA8C200EE5FAB /* Sources */ = {
+		06828ECA20AAAA9400CB8D26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06828EDA20AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodeld in Sources */,
+				06828ED420AAAA9500CB8D26 /* ViewController.swift in Sources */,
+				06828ED220AAAA9500CB8D26 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		06828ED520AAAA9500CB8D26 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06828ED620AAAA9500CB8D26 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		06828EDD20AAAA9600CB8D26 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06828EDE20AAAA9600CB8D26 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		06CE86E620AAA8C200EE5FAB /* Debug */ = {
+		06828EE120AAAA9600CB8D26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -171,7 +201,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -195,12 +224,10 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		06CE86E720AAA8C200EE5FAB /* Release */ = {
+		06828EE220AAAA9600CB8D26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +261,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -251,50 +277,36 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		06CE86E920AAA8C200EE5FAB /* Debug */ = {
+		06828EE420AAAA9600CB8D26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H3Z6MKPU9S;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Insist/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = "Insist(Group 52)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uts.shiweilin.Insist;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uts.shiweilin.Insist-Group-52-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		06CE86EA20AAA8C200EE5FAB /* Release */ = {
+		06828EE520AAAA9600CB8D26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = H3Z6MKPU9S;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Insist/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = "Insist(Group 52)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uts.shiweilin.Insist;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uts.shiweilin.Insist-Group-52-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,25 +315,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06CE86DA20AAA8C200EE5FAB /* Build configuration list for PBXProject "Insist" */ = {
+		06828EC920AAAA9400CB8D26 /* Build configuration list for PBXProject "Insist(Group 52)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				06CE86E620AAA8C200EE5FAB /* Debug */,
-				06CE86E720AAA8C200EE5FAB /* Release */,
+				06828EE120AAAA9600CB8D26 /* Debug */,
+				06828EE220AAAA9600CB8D26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06CE86E820AAA8C200EE5FAB /* Build configuration list for PBXNativeTarget "Insist" */ = {
+		06828EE320AAAA9600CB8D26 /* Build configuration list for PBXNativeTarget "Insist(Group 52)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				06CE86E920AAA8C200EE5FAB /* Debug */,
-				06CE86EA20AAA8C200EE5FAB /* Release */,
+				06828EE420AAAA9600CB8D26 /* Debug */,
+				06828EE520AAAA9600CB8D26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		06828ED820AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				06828ED920AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodel */,
+			);
+			currentVersion = 06828ED920AAAA9500CB8D26 /* Insist_Group_52_.xcdatamodel */;
+			path = Insist_Group_52_.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 06CE86D720AAA8C200EE5FAB /* Project object */;
+	rootObject = 06828EC620AAAA9400CB8D26 /* Project object */;
 }
