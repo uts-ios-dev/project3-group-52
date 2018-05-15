@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  INSIST (GROUP52)
+//  Insist
 //
-//  Created by Renwei Liu on 15/5/18.
-//  Copyright © 2018 Renwei Liu. All rights reserved.
+//  Created by Shiwei Lin on 16/5/18.
+//  Copyright © 2018 Shiwei Lin. All rights reserved.
 //
 
 import UIKit
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "INSIST__GROUP52_")
+        let container = NSPersistentContainer(name: "Insist")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

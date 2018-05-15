@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  INSIST (GROUP52)
+//  Insist
 //
-//  Created by Renwei Liu on 15/5/18.
-//  Copyright © 2018 Renwei Liu. All rights reserved.
+//  Created by Shiwei Lin on 16/5/18.
+//  Copyright © 2018 Shiwei Lin. All rights reserved.
 //
 
 import UIKit
