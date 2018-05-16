@@ -3,98 +3,111 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0688D54520AB21EB003DAA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0688D54420AB21EB003DAA0B /* AppDelegate.swift */; };
-		0688D54720AB21EB003DAA0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0688D54620AB21EB003DAA0B /* ViewController.swift */; };
-		0688D54A20AB21EB003DAA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0688D54820AB21EB003DAA0B /* Main.storyboard */; };
-		0688D54D20AB21EB003DAA0B /* Insist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0688D54B20AB21EB003DAA0B /* Insist.xcdatamodeld */; };
-		0688D54F20AB21EE003DAA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0688D54E20AB21EE003DAA0B /* Assets.xcassets */; };
-		0688D55220AB21EE003DAA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0688D55020AB21EE003DAA0B /* LaunchScreen.storyboard */; };
-		0688D55B20AB21F7003DAA0B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688D55A20AB21F7003DAA0B /* MapKit.framework */; };
-		0688D55E20AB220A003DAA0B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0688D55D20AB220A003DAA0B /* HealthKit.framework */; };
+		06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477E920AC238800CCBBDD /* AppDelegate.swift */; };
+		06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477EB20AC238800CCBBDD /* ViewController.swift */; };
+		06A477EF20AC238800CCBBDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477ED20AC238800CCBBDD /* Main.storyboard */; };
+		06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06A477F020AC238800CCBBDD /* Insist.xcdatamodeld */; };
+		06A477F420AC238B00CCBBDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A477F320AC238B00CCBBDD /* Assets.xcassets */; };
+		06A477F720AC238B00CCBBDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */; };
+		06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */; };
+		C257E109E2E90C4AFBCFCDF5 /* Pods_Insist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0688D54120AB21EB003DAA0B /* Insist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insist.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0688D54420AB21EB003DAA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0688D54620AB21EB003DAA0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0688D54920AB21EB003DAA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0688D54C20AB21EB003DAA0B /* Insist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Insist.xcdatamodel; sourceTree = "<group>"; };
-		0688D54E20AB21EE003DAA0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0688D55120AB21EE003DAA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0688D55320AB21EE003DAA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0688D55A20AB21F7003DAA0B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		0688D55C20AB220A003DAA0B /* Insist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Insist.entitlements; sourceTree = "<group>"; };
-		0688D55D20AB220A003DAA0B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		06A477E620AC238800CCBBDD /* Insist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A477E920AC238800CCBBDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		06A477EB20AC238800CCBBDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06A477EE20AC238800CCBBDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06A477F120AC238800CCBBDD /* Insist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Insist.xcdatamodel; sourceTree = "<group>"; };
+		06A477F320AC238B00CCBBDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Insist/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		06A477F620AC238B00CCBBDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		06A477F820AC238B00CCBBDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		06A4780A20AC36B800CCBBDD /* Insist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Insist.entitlements; sourceTree = "<group>"; };
+		331527403A1CC2CE0EF10CBE /* Pods-Insist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.debug.xcconfig"; sourceTree = "<group>"; };
+		5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC14A12FF4D988720CFEA9F6 /* Pods-Insist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0688D53E20AB21EB003DAA0B /* Frameworks */ = {
+		06A477E320AC238800CCBBDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0688D55B20AB21F7003DAA0B /* MapKit.framework in Frameworks */,
-				0688D55E20AB220A003DAA0B /* HealthKit.framework in Frameworks */,
+				C257E109E2E90C4AFBCFCDF5 /* Pods_Insist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0688D53820AB21EB003DAA0B = {
+		06A477DD20AC238800CCBBDD = {
 			isa = PBXGroup;
 			children = (
-				0688D54320AB21EB003DAA0B /* Insist */,
-				0688D54220AB21EB003DAA0B /* Products */,
-				0688D55920AB21F7003DAA0B /* Frameworks */,
+				06A477E820AC238800CCBBDD /* Insist */,
+				06A477E720AC238800CCBBDD /* Products */,
+				E98EACBCC7725EBEBFC73126 /* Pods */,
+				7DEF7F9905A16AB47502B714 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		0688D54220AB21EB003DAA0B /* Products */ = {
+		06A477E720AC238800CCBBDD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0688D54120AB21EB003DAA0B /* Insist.app */,
+				06A477E620AC238800CCBBDD /* Insist.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0688D54320AB21EB003DAA0B /* Insist */ = {
+		06A477E820AC238800CCBBDD /* Insist */ = {
 			isa = PBXGroup;
 			children = (
-				0688D55C20AB220A003DAA0B /* Insist.entitlements */,
-				0688D54420AB21EB003DAA0B /* AppDelegate.swift */,
-				0688D54620AB21EB003DAA0B /* ViewController.swift */,
-				0688D54820AB21EB003DAA0B /* Main.storyboard */,
-				0688D54E20AB21EE003DAA0B /* Assets.xcassets */,
-				0688D55020AB21EE003DAA0B /* LaunchScreen.storyboard */,
-				0688D55320AB21EE003DAA0B /* Info.plist */,
-				0688D54B20AB21EB003DAA0B /* Insist.xcdatamodeld */,
+				06A4780A20AC36B800CCBBDD /* Insist.entitlements */,
+				06A477E920AC238800CCBBDD /* AppDelegate.swift */,
+				06A477EB20AC238800CCBBDD /* ViewController.swift */,
+				06A477ED20AC238800CCBBDD /* Main.storyboard */,
+				06A477F320AC238B00CCBBDD /* Assets.xcassets */,
+				06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */,
+				06A477F820AC238B00CCBBDD /* Info.plist */,
+				06A477F020AC238800CCBBDD /* Insist.xcdatamodeld */,
+				06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */,
 			);
 			path = Insist;
 			sourceTree = "<group>";
 		};
-		0688D55920AB21F7003DAA0B /* Frameworks */ = {
+		7DEF7F9905A16AB47502B714 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0688D55D20AB220A003DAA0B /* HealthKit.framework */,
-				0688D55A20AB21F7003DAA0B /* MapKit.framework */,
+				5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E98EACBCC7725EBEBFC73126 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				331527403A1CC2CE0EF10CBE /* Pods-Insist.debug.xcconfig */,
+				FC14A12FF4D988720CFEA9F6 /* Pods-Insist.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0688D54020AB21EB003DAA0B /* Insist */ = {
+		06A477E520AC238800CCBBDD /* Insist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0688D55620AB21EE003DAA0B /* Build configuration list for PBXNativeTarget "Insist" */;
+			buildConfigurationList = 06A477FB20AC238B00CCBBDD /* Build configuration list for PBXNativeTarget "Insist" */;
 			buildPhases = (
-				0688D53D20AB21EB003DAA0B /* Sources */,
-				0688D53E20AB21EB003DAA0B /* Frameworks */,
-				0688D53F20AB21EB003DAA0B /* Resources */,
+				CE8DED85587B2AB0AB83D0A3 /* [CP] Check Pods Manifest.lock */,
+				06A477E220AC238800CCBBDD /* Sources */,
+				06A477E320AC238800CCBBDD /* Frameworks */,
+				06A477E420AC238800CCBBDD /* Resources */,
+				88088940BF5A8E4E700C043E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,89 +115,133 @@
 			);
 			name = Insist;
 			productName = Insist;
-			productReference = 0688D54120AB21EB003DAA0B /* Insist.app */;
+			productReference = 06A477E620AC238800CCBBDD /* Insist.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0688D53920AB21EB003DAA0B /* Project object */ = {
+		06A477DE20AC238800CCBBDD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Shiwei Lin";
 				TargetAttributes = {
-					0688D54020AB21EB003DAA0B = {
+					06A477E520AC238800CCBBDD = {
 						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
-							com.apple.HealthKit = {
-								enabled = 1;
-							};
-							com.apple.Maps.iOS = {
+							com.apple.Keychain = {
 								enabled = 1;
 							};
 						};
 					};
 				};
 			};
-			buildConfigurationList = 0688D53C20AB21EB003DAA0B /* Build configuration list for PBXProject "Insist" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 06A477E120AC238800CCBBDD /* Build configuration list for PBXProject "Insist" */;
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0688D53820AB21EB003DAA0B;
-			productRefGroup = 0688D54220AB21EB003DAA0B /* Products */;
+			mainGroup = 06A477DD20AC238800CCBBDD;
+			productRefGroup = 06A477E720AC238800CCBBDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0688D54020AB21EB003DAA0B /* Insist */,
+				06A477E520AC238800CCBBDD /* Insist */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0688D53F20AB21EB003DAA0B /* Resources */ = {
+		06A477E420AC238800CCBBDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0688D55220AB21EE003DAA0B /* LaunchScreen.storyboard in Resources */,
-				0688D54F20AB21EE003DAA0B /* Assets.xcassets in Resources */,
-				0688D54A20AB21EB003DAA0B /* Main.storyboard in Resources */,
+				06A477F720AC238B00CCBBDD /* LaunchScreen.storyboard in Resources */,
+				06A477F420AC238B00CCBBDD /* Assets.xcassets in Resources */,
+				06A477EF20AC238800CCBBDD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		88088940BF5A8E4E700C043E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Insist/Pods-Insist-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Insist/Pods-Insist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE8DED85587B2AB0AB83D0A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Insist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		0688D53D20AB21EB003DAA0B /* Sources */ = {
+		06A477E220AC238800CCBBDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0688D54720AB21EB003DAA0B /* ViewController.swift in Sources */,
-				0688D54D20AB21EB003DAA0B /* Insist.xcdatamodeld in Sources */,
-				0688D54520AB21EB003DAA0B /* AppDelegate.swift in Sources */,
+				06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */,
+				06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */,
+				06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */,
+				06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0688D54820AB21EB003DAA0B /* Main.storyboard */ = {
+		06A477ED20AC238800CCBBDD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0688D54920AB21EB003DAA0B /* Base */,
+				06A477EE20AC238800CCBBDD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		0688D55020AB21EE003DAA0B /* LaunchScreen.storyboard */ = {
+		06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0688D55120AB21EE003DAA0B /* Base */,
+				06A477F620AC238B00CCBBDD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -192,7 +249,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0688D55420AB21EE003DAA0B /* Debug */ = {
+		06A477F920AC238B00CCBBDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,7 +309,7 @@
 			};
 			name = Debug;
 		};
-		0688D55520AB21EE003DAA0B /* Release */ = {
+		06A477FA20AC238B00CCBBDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -300,24 +357,22 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		0688D55720AB21EE003DAA0B /* Debug */ = {
+		06A477FC20AC238B00CCBBDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 331527403A1CC2CE0EF10CBE /* Pods-Insist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Insist/Insist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3Z6MKPU9S;
 				INFOPLIST_FILE = Insist/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uts.Insist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -325,18 +380,17 @@
 			};
 			name = Debug;
 		};
-		0688D55820AB21EE003DAA0B /* Release */ = {
+		06A477FD20AC238B00CCBBDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC14A12FF4D988720CFEA9F6 /* Pods-Insist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Insist/Insist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3Z6MKPU9S;
 				INFOPLIST_FILE = Insist/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uts.Insist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -347,20 +401,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0688D53C20AB21EB003DAA0B /* Build configuration list for PBXProject "Insist" */ = {
+		06A477E120AC238800CCBBDD /* Build configuration list for PBXProject "Insist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0688D55420AB21EE003DAA0B /* Debug */,
-				0688D55520AB21EE003DAA0B /* Release */,
+				06A477F920AC238B00CCBBDD /* Debug */,
+				06A477FA20AC238B00CCBBDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0688D55620AB21EE003DAA0B /* Build configuration list for PBXNativeTarget "Insist" */ = {
+		06A477FB20AC238B00CCBBDD /* Build configuration list for PBXNativeTarget "Insist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0688D55720AB21EE003DAA0B /* Debug */,
-				0688D55820AB21EE003DAA0B /* Release */,
+				06A477FC20AC238B00CCBBDD /* Debug */,
+				06A477FD20AC238B00CCBBDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -368,17 +422,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0688D54B20AB21EB003DAA0B /* Insist.xcdatamodeld */ = {
+		06A477F020AC238800CCBBDD /* Insist.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0688D54C20AB21EB003DAA0B /* Insist.xcdatamodel */,
+				06A477F120AC238800CCBBDD /* Insist.xcdatamodel */,
 			);
-			currentVersion = 0688D54C20AB21EB003DAA0B /* Insist.xcdatamodel */;
+			currentVersion = 06A477F120AC238800CCBBDD /* Insist.xcdatamodel */;
 			path = Insist.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 0688D53920AB21EB003DAA0B /* Project object */;
+	rootObject = 06A477DE20AC238800CCBBDD /* Project object */;
 }
