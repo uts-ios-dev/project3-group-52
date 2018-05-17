@@ -16,7 +16,7 @@ class WelcomeController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        // let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50)
         //loginButton.delegate = self

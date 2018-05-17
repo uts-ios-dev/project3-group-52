@@ -30,10 +30,22 @@ class ProfileController: UIViewController {
                     self.picture.image = UIImage(data: data!)
                 }
                 
-//                let req = GraphRequest(graphPath: "me", parameters: ["fields":"email, userBirthday"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)
-//                req.start({ (connection, result) in
-//                        print("result\(result)")
-//                })
+                let connection = GraphRequestConnection()
+                connection.add(GraphRequest(graphPath: "/me", parameters: ["fields":"email, birthday"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)) { httpResponse, result in
+                    switch result {
+                    case .success(let response):
+                        print("Graph Request Succeeded: \(response)")
+                        if let dob = response.dictionaryValue?["birthday"] {
+                            self.DOB.text = "Birthday: \(dob)"
+                        }
+                        if let email = response.dictionaryValue?["email"] {
+                            self.email.text = "Email: \(email)"
+                        }
+                    case .failed(let error):
+                        print("Graph Request Failed: \(error)")
+                    }
+                }
+                connection.start()
             }
         }
     }
