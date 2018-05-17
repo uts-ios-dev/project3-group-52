@@ -16,6 +16,7 @@
 		06A477F720AC238B00CCBBDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */; };
 		06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */; };
 		06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACD35720AC7CC300700BFC /* ProfileController.swift */; };
+		99CC96AA20ADC180009CB160 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC96A920ADC180009CB160 /* FinishRunningViewController.swift */; };
 		C257E109E2E90C4AFBCFCDF5 /* Pods_Insist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		06ACD35720AC7CC300700BFC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		331527403A1CC2CE0EF10CBE /* Pods-Insist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99CC96A920ADC180009CB160 /* FinishRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRunningViewController.swift; sourceTree = "<group>"; };
 		FC14A12FF4D988720CFEA9F6 /* Pods-Insist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */,
 				06ACD35720AC7CC300700BFC /* ProfileController.swift */,
 				060829EF20AD2E4A0096F16A /* StatusController.swift */,
+				99CC96A920ADC180009CB160 /* FinishRunningViewController.swift */,
 			);
 			path = Insist;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				060829F020AD2E4A0096F16A /* StatusController.swift in Sources */,
 				06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */,
 				06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */,
+				99CC96AA20ADC180009CB160 /* FinishRunningViewController.swift in Sources */,
 				06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */,
 				06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */,
 			);
