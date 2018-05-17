@@ -1,5 +1,5 @@
 //
-//  FinishRunningViewController.swift
+//  FinishController.swift
 //  Insist
 //
 //  Created by Jinmiao Cheng on 16/5/18.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class FinishRunningViewController: UIViewController, MKMapViewDelegate {
+class FinishController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     

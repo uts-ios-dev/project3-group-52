@@ -273,7 +273,6 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile" id="FMr-vT-yOJ"/>
                     <connections>
                         <outlet property="DOB" destination="V4j-pa-Jdq" id="gEt-jh-a5o"/>
-                        <outlet property="Email" destination="AWz-RA-hFP" id="a5r-9F-mRX"/>
                         <outlet property="email" destination="AWz-RA-hFP" id="a6P-CI-2fe"/>
                         <outlet property="name" destination="Obb-sO-xUw" id="g9O-Gb-Hud"/>
                         <outlet property="picture" destination="03P-SU-ymP" id="3Ih-6u-cdV"/>
@@ -391,22 +390,15 @@
         <!--Status-->
         <scene sceneID="KG8-RI-DgT">
             <objects>
-                <viewController title="Status" id="o0E-4G-glO" sceneMemberID="viewController">
+                <viewController title="Status" id="o0E-4G-glO" customClass="FinishController" customModule="Insist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N5v-Us-vZ3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-2x-B3o">
-                                <rect key="frame" x="16" y="109" width="343" height="257"/>
+                                <rect key="frame" x="16" y="154" width="343" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONGRATULATIONS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Mb-vBr">
-                                <rect key="frame" x="16" y="56" width="343" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-GY-0xk">
                                 <rect key="frame" x="271" y="564" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -420,10 +412,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONGRATULATIONS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Mb-vBr">
+                                <rect key="frame" x="16" y="93" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="q3O-UV-cdA"/>
                     </view>
+                    <connections>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="U1H-zs-KwJ"/>
+=======
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVZ-gK-nYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
