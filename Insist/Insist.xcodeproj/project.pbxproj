@@ -15,10 +15,39 @@
 		06A477F720AC238B00CCBBDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */; };
 		06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */; };
 		06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACD35720AC7CC300700BFC /* ProfileController.swift */; };
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+		99CC96AA20ADC180009CB160 /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC96A920ADC180009CB160 /* FinishController.swift */; };
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
 		06E7563F20ADC606005BAC9E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E7563E20ADC606005BAC9E /* MapKit.framework */; };
 		06E7564120ADC958005BAC9E /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564020ADC958005BAC9E /* FinishController.swift */; };
 		06E7564320ADCBCB005BAC9E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564220ADCBCB005BAC9E /* Record.swift */; };
+<<<<<<< HEAD
 		06E7564520ADD031005BAC9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564420ADD031005BAC9E /* User.swift */; };
+=======
+=======
+		99CC96AA20ADC180009CB160 /* FinishRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC96A920ADC180009CB160 /* FinishRunningViewController.swift */; };
+>>>>>>> 22e9c6e488242229cd921892e178e6bc45bde211
+<<<<<<< HEAD
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+		06E7563F20ADC606005BAC9E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E7563E20ADC606005BAC9E /* MapKit.framework */; };
+		06E7564120ADC958005BAC9E /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564020ADC958005BAC9E /* FinishController.swift */; };
+		06E7564320ADCBCB005BAC9E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564220ADCBCB005BAC9E /* Record.swift */; };
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+=======
+		06E7563F20ADC606005BAC9E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E7563E20ADC606005BAC9E /* MapKit.framework */; };
+		06E7564120ADC958005BAC9E /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564020ADC958005BAC9E /* FinishController.swift */; };
+		06E7564320ADCBCB005BAC9E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564220ADCBCB005BAC9E /* Record.swift */; };
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+>>>>>>> 98d485725a118d9efada35b1ecfa77abf67fd43e
 		C257E109E2E90C4AFBCFCDF5 /* Pods_Insist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +69,13 @@
 		06E7564420ADD031005BAC9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		331527403A1CC2CE0EF10CBE /* Pods-Insist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+<<<<<<< HEAD
+<<<<<<< HEAD
+		99CC96A920ADC180009CB160 /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+=======
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
 		FC14A12FF4D988720CFEA9F6 /* Pods-Insist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,9 +123,34 @@
 				06A477F020AC238800CCBBDD /* Insist.xcdatamodeld */,
 				06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */,
 				06ACD35720AC7CC300700BFC /* ProfileController.swift */,
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 				06E7564020ADC958005BAC9E /* FinishController.swift */,
 				06E7564220ADCBCB005BAC9E /* Record.swift */,
+=======
+				060829EF20AD2E4A0096F16A /* StatusController.swift */,
+<<<<<<< HEAD
+				99CC96A920ADC180009CB160 /* FinishController.swift */,
+=======
+				99CC96A920ADC180009CB160 /* FinishRunningViewController.swift */,
+>>>>>>> 22e9c6e488242229cd921892e178e6bc45bde211
+<<<<<<< HEAD
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+				06E7564020ADC958005BAC9E /* FinishController.swift */,
+				06E7564220ADCBCB005BAC9E /* Record.swift */,
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+=======
+				06E7564020ADC958005BAC9E /* FinishController.swift */,
+				06E7564220ADCBCB005BAC9E /* Record.swift */,
+<<<<<<< HEAD
 				06E7564420ADD031005BAC9E /* User.swift */,
+=======
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+>>>>>>> 98d485725a118d9efada35b1ecfa77abf67fd43e
 			);
 			path = Insist;
 			sourceTree = "<group>";
@@ -248,9 +309,33 @@
 				06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */,
 				06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */,
 				06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */,
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+				99CC96AA20ADC180009CB160 /* FinishController.swift in Sources */,
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+				06E7564120ADC958005BAC9E /* FinishController.swift in Sources */,
+				06E7564320ADCBCB005BAC9E /* Record.swift in Sources */,
+=======
+				99CC96AA20ADC180009CB160 /* FinishRunningViewController.swift in Sources */,
+>>>>>>> 22e9c6e488242229cd921892e178e6bc45bde211
+<<<<<<< HEAD
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+				06E7564120ADC958005BAC9E /* FinishController.swift in Sources */,
+				06E7564320ADCBCB005BAC9E /* Record.swift in Sources */,
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+=======
 				06E7564120ADC958005BAC9E /* FinishController.swift in Sources */,
 				06E7564520ADD031005BAC9E /* User.swift in Sources */,
 				06E7564320ADCBCB005BAC9E /* Record.swift in Sources */,
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
 				06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */,
 				06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */,
 			);

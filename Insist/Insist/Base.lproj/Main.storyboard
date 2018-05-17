@@ -424,7 +424,23 @@
                         <viewLayoutGuide key="safeArea" id="q3O-UV-cdA"/>
                     </view>
                     <connections>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="U1H-zs-KwJ"/>
+=======
                         <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
+>>>>>>> 888be2da9620c5393494a47642ed9dc8f3dcc867
+=======
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
+=======
+                        <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
+>>>>>>> b66ad9df76fec6a58619f386a45c6025547c3156
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVZ-gK-nYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
