@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060829F020AD2E4A0096F16A /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060829EF20AD2E4A0096F16A /* StatusController.swift */; };
 		06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477E920AC238800CCBBDD /* AppDelegate.swift */; };
 		06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477EB20AC238800CCBBDD /* ViewController.swift */; };
 		06A477EF20AC238800CCBBDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477ED20AC238800CCBBDD /* Main.storyboard */; };
@@ -16,11 +15,13 @@
 		06A477F720AC238B00CCBBDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */; };
 		06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */; };
 		06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACD35720AC7CC300700BFC /* ProfileController.swift */; };
+		06E7563F20ADC606005BAC9E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E7563E20ADC606005BAC9E /* MapKit.framework */; };
+		06E7564120ADC958005BAC9E /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564020ADC958005BAC9E /* FinishController.swift */; };
+		06E7564320ADCBCB005BAC9E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564220ADCBCB005BAC9E /* Record.swift */; };
 		C257E109E2E90C4AFBCFCDF5 /* Pods_Insist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		060829EF20AD2E4A0096F16A /* StatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 		06A477E620AC238800CCBBDD /* Insist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A477E920AC238800CCBBDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A477EB20AC238800CCBBDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +33,9 @@
 		06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		06A4780A20AC36B800CCBBDD /* Insist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Insist.entitlements; sourceTree = "<group>"; };
 		06ACD35720AC7CC300700BFC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		06E7563E20ADC606005BAC9E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		06E7564020ADC958005BAC9E /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
+		06E7564220ADCBCB005BAC9E /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		331527403A1CC2CE0EF10CBE /* Pods-Insist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC14A12FF4D988720CFEA9F6 /* Pods-Insist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.release.xcconfig"; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06E7563F20ADC606005BAC9E /* MapKit.framework in Frameworks */,
 				C257E109E2E90C4AFBCFCDF5 /* Pods_Insist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +85,8 @@
 				06A477F020AC238800CCBBDD /* Insist.xcdatamodeld */,
 				06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */,
 				06ACD35720AC7CC300700BFC /* ProfileController.swift */,
-				060829EF20AD2E4A0096F16A /* StatusController.swift */,
+				06E7564020ADC958005BAC9E /* FinishController.swift */,
+				06E7564220ADCBCB005BAC9E /* Record.swift */,
 			);
 			path = Insist;
 			sourceTree = "<group>";
@@ -88,6 +94,7 @@
 		7DEF7F9905A16AB47502B714 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06E7563E20ADC606005BAC9E /* MapKit.framework */,
 				5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */,
 			);
 			name = Frameworks;
@@ -139,6 +146,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
@@ -233,9 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */,
-				060829F020AD2E4A0096F16A /* StatusController.swift in Sources */,
 				06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */,
 				06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */,
+				06E7564120ADC958005BAC9E /* FinishController.swift in Sources */,
+				06E7564320ADCBCB005BAC9E /* Record.swift in Sources */,
 				06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */,
 				06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */,
 			);
