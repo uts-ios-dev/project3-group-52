@@ -12,23 +12,53 @@ import FacebookCore
 
 class WelcomeController: UIViewController {
     
+//    @IBOutlet weak var enter: UIButton!
+    
+    @IBOutlet weak var signup: UIButton!
+    @IBOutlet weak var login: UIButton!
+    
+    @IBAction func signupButton(_ sender: Any) {
+        checkLoginStatus()
+    }
+    @IBAction func loginButton(_ sender: Any) {
+        checkLoginStatus()
+    }
+    
+    func checkLoginStatus() {
+        if AccessToken.current != nil{
+            let accountAlert = UIAlertController(title: "Facebook", message: "You have logged in with Facebook ", preferredStyle: .alert)
+            accountAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            present(accountAlert, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-       // let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
+        //let loginButton = LoginButton(publishPermissions: [.publishActions])
+        loginButton.frame = CGRect(x: view.frame.width / 10, y: view.frame.height / 2 + 170, width: 300, height: 50)
         view.addSubview(loginButton)
-        loginButton.frame = CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50)
+//        signup.isHidden = false
+//        login.isHidden = false
+       // enter.isHidden = true
         //loginButton.delegate = self
         if AccessToken.current != nil{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
             navigationController?.pushViewController(vc, animated: true)
+//            enter.isHidden = false
+//            signup.isHidden = true
+//            login.isHidden = true
         }
+        
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton!) {
         print("Log out")
+//        signup.isHidden = false
+//        login.isHidden = false
     }
     
     func loginButton(_ loginButton: LoginButton!, didCompleteWith result: LoginResult!, error: Error!) {
@@ -37,6 +67,15 @@ class WelcomeController: UIViewController {
             return
         }
         print("Logged in")
+
+//        if AccessToken.current != nil{
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+//            navigationController?.pushViewController(vc, animated: true)
+////            enter.isHidden = false
+////            signup.isHidden = true
+////            login.isHidden = true
+//        }
     }
     
     override func didReceiveMemoryWarning() {

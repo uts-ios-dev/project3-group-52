@@ -13,8 +13,7 @@ class User
     var _username: String = ""
     var _totaldistance: Int = 0
     var _email: String = ""
-    var _userTime: Timer = Timer.init()
-    
+    var _userTime: String = ""
     
     var username: String
     {
@@ -52,7 +51,7 @@ class User
         }
     }
     
-    var userTime: Timer
+    var userTime: String
     {
         get
         {

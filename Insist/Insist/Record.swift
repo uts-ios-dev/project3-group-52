@@ -14,7 +14,7 @@ class Record
     var _startLocation: CLLocationCoordinate2D = CLLocationCoordinate2D.init()
     var _endLocation: CLLocationCoordinate2D = CLLocationCoordinate2D.init()
     var _steps: Int = 0
-    var _time: Timer = Timer.init()
+    var _time: String = ""
     var _distance: Int = 0
     
     var startLocation: CLLocationCoordinate2D
@@ -53,7 +53,7 @@ class Record
         }
     }
     
-    var time: Timer
+    var time: String
     {
         get
         {

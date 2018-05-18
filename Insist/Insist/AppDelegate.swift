@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import FacebookCore
 import FacebookLogin
+import FacebookShare
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0608D20D20AE8B480028F98F /* RunningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0608D20C20AE8B480028F98F /* RunningController.swift */; };
+		069C815920AF23330085ECE2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C815820AF23330085ECE2 /* LoginController.swift */; };
+		069C815B20AF233F0085ECE2 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C815A20AF233F0085ECE2 /* RegisterController.swift */; };
 		06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477E920AC238800CCBBDD /* AppDelegate.swift */; };
 		06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477EB20AC238800CCBBDD /* ViewController.swift */; };
 		06A477EF20AC238800CCBBDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477ED20AC238800CCBBDD /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0608D20C20AE8B480028F98F /* RunningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningController.swift; sourceTree = "<group>"; };
+		069C815820AF23330085ECE2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		069C815A20AF233F0085ECE2 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		06A477E620AC238800CCBBDD /* Insist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A477E920AC238800CCBBDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A477EB20AC238800CCBBDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,8 +94,11 @@
 				06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */,
 				06ACD35720AC7CC300700BFC /* ProfileController.swift */,
 				06E7564020ADC958005BAC9E /* FinishController.swift */,
+				0608D20C20AE8B480028F98F /* RunningController.swift */,
 				06E7564220ADCBCB005BAC9E /* Record.swift */,
 				06E7564420ADD031005BAC9E /* User.swift */,
+				069C815820AF23330085ECE2 /* LoginController.swift */,
+				069C815A20AF233F0085ECE2 /* RegisterController.swift */,
 			);
 			path = Insist;
 			sourceTree = "<group>";
@@ -247,12 +256,15 @@
 			files = (
 				06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */,
 				06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */,
+				069C815B20AF233F0085ECE2 /* RegisterController.swift in Sources */,
 				06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */,
 				06E7564120ADC958005BAC9E /* FinishController.swift in Sources */,
 				06E7564520ADD031005BAC9E /* User.swift in Sources */,
 				06E7564320ADCBCB005BAC9E /* Record.swift in Sources */,
 				06A4780920AC2B9B00CCBBDD /* WelcomeController.swift in Sources */,
+				0608D20D20AE8B480028F98F /* RunningController.swift in Sources */,
 				06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */,
+				069C815920AF23330085ECE2 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
