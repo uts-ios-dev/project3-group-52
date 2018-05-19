@@ -95,10 +95,10 @@
 				06ACD35720AC7CC300700BFC /* ProfileController.swift */,
 				06E7564020ADC958005BAC9E /* FinishController.swift */,
 				0608D20C20AE8B480028F98F /* RunningController.swift */,
-				06E7564220ADCBCB005BAC9E /* Record.swift */,
-				06E7564420ADD031005BAC9E /* User.swift */,
 				069C815820AF23330085ECE2 /* LoginController.swift */,
 				069C815A20AF233F0085ECE2 /* RegisterController.swift */,
+				06E7564220ADCBCB005BAC9E /* Record.swift */,
+				06E7564420ADD031005BAC9E /* User.swift */,
 			);
 			path = Insist;
 			sourceTree = "<group>";

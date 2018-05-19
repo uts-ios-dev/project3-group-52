@@ -17,6 +17,19 @@ class WelcomeController: UIViewController {
     @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var login: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
+        //let loginButton = LoginButton(publishPermissions: [.publishActions])
+        loginButton.frame = CGRect(x: view.frame.width / 10, y: view.frame.height / 2 + 170, width: 300, height: 50)
+        view.addSubview(loginButton)
+        if AccessToken.current != nil{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     @IBAction func signupButton(_ sender: Any) {
         checkLoginStatus()
     }
@@ -34,31 +47,8 @@ class WelcomeController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
-        //let loginButton = LoginButton(publishPermissions: [.publishActions])
-        loginButton.frame = CGRect(x: view.frame.width / 10, y: view.frame.height / 2 + 170, width: 300, height: 50)
-        view.addSubview(loginButton)
-//        signup.isHidden = false
-//        login.isHidden = false
-       // enter.isHidden = true
-        //loginButton.delegate = self
-        if AccessToken.current != nil{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-            navigationController?.pushViewController(vc, animated: true)
-//            enter.isHidden = false
-//            signup.isHidden = true
-//            login.isHidden = true
-        }
-        
-    }
-    
     func loginButtonDidLogOut(_ loginButton: LoginButton!) {
         print("Log out")
-//        signup.isHidden = false
-//        login.isHidden = false
     }
     
     func loginButton(_ loginButton: LoginButton!, didCompleteWith result: LoginResult!, error: Error!) {
@@ -67,15 +57,6 @@ class WelcomeController: UIViewController {
             return
         }
         print("Logged in")
-
-//        if AccessToken.current != nil{
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-//            navigationController?.pushViewController(vc, animated: true)
-////            enter.isHidden = false
-////            signup.isHidden = true
-////            login.isHidden = true
-//        }
     }
     
     override func didReceiveMemoryWarning() {
