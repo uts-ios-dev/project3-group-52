@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 var user = User()
 var record = Record()
 
-class RunningController: UIViewController {
+class RunningController: UIViewController, CLLocationManagerDelegate {
     
 //    var startTime: Int = 3
 //    var startTimer: Timer?
@@ -20,9 +21,11 @@ class RunningController: UIViewController {
     var hour: Int = 0
     var min: Int = 0
     var sec: Int = 0
+    let locationManager = CLLocationManager()
     
     var startStopWatch: Bool = true
     
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var runTimeLabel: UILabel!
   //  @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var pause: UIButton!
@@ -47,6 +50,17 @@ class RunningController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            map.showsUserLocation = true
+        }
         // Do any additional setup after loading the view, typically from a nib.
         runTimeLabel.text = "00:00:00"
         pause.setTitle("Start", for: .normal)
@@ -54,6 +68,16 @@ class RunningController: UIViewController {
 //        startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.start), userInfo: nil, repeats: true)
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        let location = locations.last! as CLLocation
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        self.map.setRegion(region, animated: true)
+    }
 //    @objc func start() {
 //        startTime = startTime - 1
 //        startLabel.text = String(startTime)
