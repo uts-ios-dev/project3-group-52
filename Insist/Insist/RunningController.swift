@@ -30,6 +30,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var runTimeLabel: UILabel!
+<<<<<<< HEAD
     @IBOutlet weak var distanceLabel: UILabel!
   //  @IBOutlet weak var speedLabel: UILabel!
     //  @IBOutlet weak var startLabel: UILabel!
@@ -47,6 +48,20 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
             map.showsUserLocation = true
+=======
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var pause: UIButton!
+    @IBAction func pauseButton(_ sender: Any) {
+        if startStopWatch == true {
+            runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+            startStopWatch = false
+            pause.setTitle("Pause", for: .normal)
+        }
+        else {
+            startStopWatch = true
+            runTimer?.invalidate()
+            pause.setTitle("Continue", for: .normal)
+>>>>>>> bcdd5ca9f03602f1f305cfe3f52d5bf99f198355
         }
  
         runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
@@ -92,6 +107,12 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
 //        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
 //        print("locations = \(locValue.latitude) \(locValue.longitude)")
         
+<<<<<<< HEAD
+=======
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        record.startLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+>>>>>>> bcdd5ca9f03602f1f305cfe3f52d5bf99f198355
         
       //  let location = locations.last! as CLLocation
 //        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)

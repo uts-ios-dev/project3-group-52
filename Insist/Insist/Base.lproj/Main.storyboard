@@ -460,7 +460,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BMx-ej-xeN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HDs-KP-X7Y">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -479,7 +478,8 @@
         <image name="Score" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6vz-3x-cZJ"/>
+        <segue reference="zWN-3w-MwZ"/>
+        <segue reference="imB-hV-Mui"/>
         <segue reference="yU5-s9-5AA"/>
         <segue reference="kkC-HS-DAL"/>
     </inferredMetricsTieBreakers>
