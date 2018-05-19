@@ -30,36 +30,36 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         runTimeLabel.text = "Time: 00:00:00"
-        //locationList.removeAll()
-        //distance = Measurement(value: 0, unit: UnitLength.meters)
+        locationList.removeAll()
+        distance = Measurement(value: 0, unit: UnitLength.meters)
+        self.locationManager.requestWhenInUseAuthorization()
     }
     
     
     @IBAction func startButton(_ sender: UIButton) {
-        self.locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.activityType = .fitness
-            locationManager.distanceFilter = 10
-            locationManager.startUpdatingLocation()
-            map.showsUserLocation = true
-        }
         distance = Measurement(value: 0, unit: UnitLength.meters)
         locationList.removeAll()
         runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         sender.isEnabled = false
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.activityType = .fitness
+            locationManager.startUpdatingLocation()
+            locationManager.distanceFilter = 10
+            map.showsUserLocation = true
+        }
     }
     
     @IBAction func finishButton(_ sender: Any) {
         runTimer?.invalidate()
         record.time = runTimeLabel.text!
-        print(record.time)
         if !locationList.isEmpty {
-            record.startLocation = locationList[0]
+            record.startLocation = locationList.first!
             record.endLocation = locationList.last!
             locationList.removeAll()
         }
+        record.distance = MeasurementFormatter().string(from: distance)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -68,7 +68,6 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
                 let location = locations.last! as CLLocation
                 locationList.append(location)
             }
-                
             else {
                 if let lastLocation = locationList.last {
                     let dis = newLocation.distance(from: lastLocation)

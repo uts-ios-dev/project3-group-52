@@ -13,9 +13,8 @@ class Record
 {
     var _startLocation: CLLocation = CLLocation.init()
     var _endLocation: CLLocation = CLLocation.init()
-    var _steps: Int = 0
     var _time: String = ""
-    var _distance: Int = 0
+    var _distance: String = ""
     
     var startLocation: CLLocation
     {
@@ -41,18 +40,6 @@ class Record
         }
     }
     
-    var steps: Int
-    {
-        get
-        {
-            return _steps
-        }
-        set
-        {
-            _steps = newValue
-        }
-    }
-    
     var time: String
     {
         get
@@ -65,7 +52,7 @@ class Record
         }
     }
     
-    var distance: Int
+    var distance: String
     {
         get
         {

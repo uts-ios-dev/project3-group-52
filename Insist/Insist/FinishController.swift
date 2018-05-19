@@ -18,7 +18,7 @@ import FBSDKLoginKit
 class FinishController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var shareonFB: UIButton!
+//    @IBOutlet weak var shareonFB: UIButton!
     
     class customPin: NSObject,MKAnnotation {
         var coordinate: CLLocationCoordinate2D
@@ -69,7 +69,7 @@ class FinishController: UIViewController, MKMapViewDelegate {
         self.mapView.delegate = self
     }
     
-    @IBAction func shareFB(_ sender: Any) {
+//    @IBAction func shareFB(_ sender: Any) {
 //        let content = LinkShareContent.init(url: .init(fileURLWithPath: "https://developers.facebook.com/docs/sharing/ios"))
 //        let shareDialog = ShareDialog(content: content)
 //        shareDialog.mode = .native
@@ -104,7 +104,7 @@ class FinishController: UIViewController, MKMapViewDelegate {
 //        else {
 //            publishMessage()
 //        }
-    }
+//    }
     
 //        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
 //            return // No image selected.

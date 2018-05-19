@@ -14,7 +14,7 @@ class User
     var _email: String = ""
     var _birthday: Date = Date.init()
     var _password: String = ""
-    var _totaldistance: Int = 0
+    var _totaldistance: String = ""
     var _userTime: String = ""
     
     var username: String
@@ -29,7 +29,31 @@ class User
         }
     }
     
-    var totaldistance: Int
+    var email: String
+    {
+        get
+        {
+            return _email
+        }
+        set
+        {
+            _email = newValue
+        }
+    }
+    
+    var birthday: Date
+    {
+        get
+        {
+            return _birthday
+        }
+        set
+        {
+            _birthday = newValue
+        }
+    }
+    
+    var totaldistance: String
     {
         get
         {
@@ -66,15 +90,5 @@ class User
         }
     }
     
-    var birthday: Date
-    {
-        get
-        {
-            return _birthday
-        }
-        set
-        {
-            _birthday = newValue
-        }
-    }
+
 }

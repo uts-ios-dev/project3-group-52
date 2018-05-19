@@ -31,6 +31,13 @@ class ProfileController: UIViewController {
                 self.getOtherInfo()
             }
         }
+        else {
+            if user.email != "" {
+                self.name.text = "Name: \(user.username)"
+                self.DOB.text = "Birthday: \(DateFormatter.localizedString(from: user.birthday, dateStyle: .medium, timeStyle: .none))"
+                self.email.text = "Email: \(user.email)"
+            }
+        }
     }
     
     func getOtherInfo() {
