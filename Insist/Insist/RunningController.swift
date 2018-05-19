@@ -29,12 +29,9 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         runTimeLabel.text = "Time: 00:00:00"
-        if !locationList.isEmpty {
-            locationList.removeAll()
-        }
-        distance = Measurement(value: 0, unit: UnitLength.meters)
+        //locationList.removeAll()
+        //distance = Measurement(value: 0, unit: UnitLength.meters)
     }
     
     
@@ -43,10 +40,13 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.activityType = .fitness
+            locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
             map.showsUserLocation = true
         }
-        
+        distance = Measurement(value: 0, unit: UnitLength.meters)
+        locationList.removeAll()
         runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         sender.isEnabled = false
     }
@@ -73,9 +73,8 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
                 if let lastLocation = locationList.last {
                     let dis = newLocation.distance(from: lastLocation)
                     distance = distance + Measurement(value: dis, unit: UnitLength.meters)
-                    let coordinates = [lastLocation.coordinate, newLocation.coordinate]
-                    map.add(MKPolyline(coordinates: coordinates, count: 2))
-                    
+                    //let coordinates = [lastLocation.coordinate, newLocation.coordinate]
+                    //map.add(MKPolyline(coordinates: coordinates, count: 2))
                     let location = locations.last! as CLLocation
                     let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                     let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
