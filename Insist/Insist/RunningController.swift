@@ -21,36 +21,23 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     var hour: Int = 0
     var min: Int = 0
     var sec: Int = 0
+    var distance: Measurement = Measurement(value: 0, unit: UnitLength.meters)
+
     let locationManager = CLLocationManager()
+    var locationList: [CLLocation] = []
     
-    var startStopWatch: Bool = true
+   // var startStopWatch: Bool = false
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var runTimeLabel: UILabel!
-  //  @IBOutlet weak var startLabel: UILabel!
-    @IBOutlet weak var pause: UIButton!
-    @IBAction func pauseButton(_ sender: Any) {
-        if startStopWatch == true {
-            runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-            startStopWatch = false
-            pause.setTitle("Pause", for: .normal)
-        }
-        else {
-            startStopWatch = true
-            runTimer?.invalidate()
-            pause.setTitle("Continue", for: .normal)
-        }
-    }
-
-    @IBAction func finishButton(_ sender: Any) {
-        runTimer?.invalidate()
-        record.time = runTimeLabel.text!
-        print(record.time)
-    }
+    @IBOutlet weak var distanceLabel: UILabel!
+  //  @IBOutlet weak var speedLabel: UILabel!
+    //  @IBOutlet weak var startLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Ask for Authorisation from the User.
+    @IBAction func startButton(_ sender: UIButton) {
+//        if startStopWatch == false {
+
+        
         self.locationManager.requestAlwaysAuthorization()
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -61,9 +48,42 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             map.showsUserLocation = true
         }
+ 
+        runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        sender.isEnabled = false
+        
+       // record.startLocation =
+//            startStopWatch = true
+//            pause.setTitle("Pause", for: .normal)
+//        }
+//        else {
+//            startStopWatch = false
+//            runTimer?.invalidate()
+//            pause.setTitle("Continue", for: .normal)
+//        }
+    }
+
+    @IBAction func finishButton(_ sender: Any) {
+        runTimer?.invalidate()
+        record.time = runTimeLabel.text!
+        print(record.time)
+        if !locationList.isEmpty {
+            record.startLocation = locationList[0]
+            record.endLocation = locationList.last!
+            locationList.removeAll()
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Ask for Authorisation from the User.
+
         // Do any additional setup after loading the view, typically from a nib.
-        runTimeLabel.text = "00:00:00"
-        pause.setTitle("Start", for: .normal)
+        runTimeLabel.text = "Time: 00:00:00"
+        if !locationList.isEmpty {
+            locationList.removeAll()
+        }
+        //pause.setTitle("Start", for: .normal)
 //        startLabel.text = String(startTime)
 //        startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.start), userInfo: nil, repeats: true)
     }
@@ -71,12 +91,46 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
 //        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        let location = locations.last! as CLLocation
         
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
-        self.map.setRegion(region, animated: true)
+      //  let location = locations.last! as CLLocation
+//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//        self.map.setRegion(region, animated: true)
+//        locationList.append(location)
+
+        
+        for newLocation in locations {
+//            let howRecent = newLocation.timestamp.timeIntervalSinceNow
+//            guard newLocation.horizontalAccuracy < 20 && abs(howRecent) < 10 else { continue }
+            
+            if locationList.isEmpty {
+                let location = locations.last! as CLLocation
+                locationList.append(location)
+            }
+            else {
+                if let lastLocation = locationList.last {
+                    let dis = newLocation.distance(from: lastLocation)
+                    print(dis)
+                    //speedLabel.text = "Speed: \(round(dis/Double((60*sec))))"
+                    distance = distance + Measurement(value: dis, unit: UnitLength.meters)
+                    let coordinates = [lastLocation.coordinate, newLocation.coordinate]
+                    map.add(MKPolyline(coordinates: coordinates, count: 2))
+                    let location = locations.last! as CLLocation
+                    let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                    let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                    map.setRegion(region, animated: true)
+                }
+                locationList.append(newLocation)
+                distanceLabel.text = "Distance: \(MeasurementFormatter().string(from: distance))"
+                //
+//                if let dist = Int(dis) {
+//                    //distanceLabel.text = "Distance: \(dist)"
+//                    speedLabel.text = "Speed: \(dist/(60*sec))"
+//                }
+            }
+        }
+//        print("Startlocation:\(record.startLocation)")
     }
 //    @objc func start() {
 //        startTime = startTime - 1
@@ -102,7 +156,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         let secString = sec > 9 ? "\(sec)" : "0\(sec)"
         let minString = min > 9 ? "\(min)" : "0\(min)"
         let hourString = hour > 9 ? "\(hour)" : "0\(hour)"
-        runTimeLabel.text = "\(hourString):\(minString):\(secString)"
+        runTimeLabel.text = "Time: \(hourString):\(minString):\(secString)"
     }
     
     override func didReceiveMemoryWarning() {

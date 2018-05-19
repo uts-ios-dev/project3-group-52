@@ -11,13 +11,13 @@ import MapKit
 
 class Record
 {
-    var _startLocation: CLLocationCoordinate2D = CLLocationCoordinate2D.init()
-    var _endLocation: CLLocationCoordinate2D = CLLocationCoordinate2D.init()
+    var _startLocation: CLLocation = CLLocation.init()
+    var _endLocation: CLLocation = CLLocation.init()
     var _steps: Int = 0
     var _time: String = ""
     var _distance: Int = 0
     
-    var startLocation: CLLocationCoordinate2D
+    var startLocation: CLLocation
     {
         get
         {
@@ -29,7 +29,7 @@ class Record
         }
     }
 
-    var endLocation: CLLocationCoordinate2D
+    var endLocation: CLLocation
     {
         get
         {
