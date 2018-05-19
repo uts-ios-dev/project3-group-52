@@ -27,7 +27,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var runTimeLabel: UILabel!
-  //  @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var pause: UIButton!
     @IBAction func pauseButton(_ sender: Any) {
         if startStopWatch == true {
@@ -74,6 +74,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         let location = locations.last! as CLLocation
         
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        record.startLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         self.map.setRegion(region, animated: true)
