@@ -19,7 +19,6 @@ class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         if AccessToken.current != nil{
             UserProfile.loadCurrent { (profile) in
                 if let full = UserProfile.current?.fullName {
@@ -29,25 +28,35 @@ class ProfileController: UIViewController {
                     let data = try? Data(contentsOf: profilePictureURL)
                     self.picture.image = UIImage(data: data!)
                 }
-                
-                let connection = GraphRequestConnection()
-                connection.add(GraphRequest(graphPath: "/me", parameters: ["fields":"email, birthday"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)) { httpResponse, result in
-                    switch result {
-                    case .success(let response):
-                        print("Graph Request Succeeded: \(response)")
-                        if let dob = response.dictionaryValue?["birthday"] {
-                            self.DOB.text = "Birthday: \(dob)"
-                        }
-                        if let email = response.dictionaryValue?["email"] {
-                            self.email.text = "Email: \(email)"
-                        }
-                    case .failed(let error):
-                        print("Graph Request Failed: \(error)")
-                    }
-                }
-                connection.start()
+                self.getOtherInfo()
             }
         }
+        else {
+            if user.email != "" {
+                self.name.text = "Name: \(user.username)"
+                self.DOB.text = "Birthday: \(DateFormatter.localizedString(from: user.birthday, dateStyle: .medium, timeStyle: .none))"
+                self.email.text = "Email: \(user.email)"
+            }
+        }
+    }
+    
+    func getOtherInfo() {
+        let connection = GraphRequestConnection()
+        connection.add(GraphRequest(graphPath: "/me", parameters: ["fields":"email, birthday"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)) { httpResponse, result in
+            switch result {
+            case .success(let response):
+                print("Graph Request Succeeded: \(response)")
+                if let dob = response.dictionaryValue?["birthday"] {
+                    self.DOB.text = "Birthday: \(dob)"
+                }
+                if let email = response.dictionaryValue?["email"] {
+                    self.email.text = "Email: \(email)"
+                }
+            case .failed(let error):
+                print("Graph Request Failed: \(error)")
+            }
+        }
+        connection.start()
     }
     
     override func didReceiveMemoryWarning() {

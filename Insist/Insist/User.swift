@@ -11,8 +11,10 @@ import Foundation
 class User
 {
     var _username: String = ""
-    var _totaldistance: Int = 0
     var _email: String = ""
+    var _birthday: Date = Date.init()
+    var _password: String = ""
+    var _totaldistance: String = ""
     var _userTime: String = ""
     
     var username: String
@@ -24,18 +26,6 @@ class User
         set
         {
             _username = newValue
-        }
-    }
-    
-    var totaldistance: Int
-    {
-        get
-        {
-            return _totaldistance
-        }
-        set
-        {
-            _totaldistance = newValue
         }
     }
     
@@ -51,6 +41,30 @@ class User
         }
     }
     
+    var birthday: Date
+    {
+        get
+        {
+            return _birthday
+        }
+        set
+        {
+            _birthday = newValue
+        }
+    }
+    
+    var totaldistance: String
+    {
+        get
+        {
+            return _totaldistance
+        }
+        set
+        {
+            _totaldistance = newValue
+        }
+    }
+    
     var userTime: String
     {
         get
@@ -62,4 +76,19 @@ class User
             _userTime = newValue
         }
     }
+    
+    
+    var password: String
+    {
+        get
+        {
+            return _password
+        }
+        set
+        {
+            _password = newValue
+        }
+    }
+    
+
 }

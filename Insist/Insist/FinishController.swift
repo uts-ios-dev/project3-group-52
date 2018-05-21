@@ -15,12 +15,10 @@ import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
 
-class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class FinishController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var shareonFB: UIButton!
-    
-    let endlocationManager = CLLocationManager()
+//    @IBOutlet weak var shareonFB: UIButton!
     
     class customPin: NSObject,MKAnnotation {
         var coordinate: CLLocationCoordinate2D
@@ -41,19 +39,18 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
 //        view.addSubview(loginButton)
 //        let content = LinkShareContent.init(url: URL)
 //        let shareButton = ShareButton(frame: CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50), content: content)
-        // For use in foreground
-        self.endlocationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            endlocationManager.delegate = self
-            endlocationManager.desiredAccuracy = kCLLocationAccuracyBest
-            endlocationManager.requestAlwaysAuthorization()
-            endlocationManager.startUpdatingLocation()
-            
         
-        let sourceLocation = record._startLocation
-        let destinationLocation = record._endLocation
+<<<<<<< HEAD
+        let sourceLocation = record.startLocation
+        let destinationLocation = record.endLocation
         let sourcePin = customPin(pinTitle: "Start", pinSubTitle: "Start point", location: sourceLocation)
         let destinationPin = customPin(pinTitle: "End", pinSubTitle: "End point", location: destinationLocation)
+=======
+        let sourceLocation = CLLocationCoordinate2D(latitude:-33.923164, longitude:151.18543)
+        let destinationLocation = CLLocationCoordinate2D(latitude:-33.883238, longitude:151.200494)
+        let sourcePin = customPin(pinTitle: "Mascot", pinSubTitle: "Home", location: sourceLocation)
+        let destinationPin = customPin(pinTitle: "Ultimo", pinSubTitle: "UTS", location: destinationLocation)
+>>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
         self.mapView.addAnnotation(sourcePin)
         self.mapView.addAnnotation(destinationPin)
         let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
@@ -79,20 +76,24 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         self.mapView.delegate = self
     }
     
+<<<<<<< HEAD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         //        print("locations = \(locValue.latitude) \(locValue.longitude)")
         let location = locations.last! as CLLocation
         
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        record._endLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        record.endLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.075, longitudeDelta: 0.075))
         
         self.mapView.setRegion(region, animated: true)
         }
     
     
         func shareFB(_ sender: Any) {
+=======
+//    @IBAction func shareFB(_ sender: Any) {
+>>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
 //        let content = LinkShareContent.init(url: .init(fileURLWithPath: "https://developers.facebook.com/docs/sharing/ios"))
 //        let shareDialog = ShareDialog(content: content)
 //        shareDialog.mode = .native
@@ -127,7 +128,7 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
 //        else {
 //            publishMessage()
 //        }
-    }
+//    }
     
 //        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
 //            return // No image selected.
@@ -138,7 +139,7 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
 //        try ShareDialog.show(from: self, content: content)
 //    }
     
-        func share(_ sender: Any) {
+    @IBAction func share(_ sender: Any) {
         print("share")
         let myShare = "Test share"
         // let image: UIImage = UIImage(named: "Home")!
@@ -186,5 +187,4 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
 //            }
 //        }
 //    }
-}
 }
