@@ -411,8 +411,11 @@
                     <connections>
                         <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <outlet property="shareonFB" destination="Ik8-AR-eOm" id="OsC-ZX-BTG"/>
                         <outlet property="slider" destination="Na5-2Y-72K" id="eD0-Yg-s5X"/>
+=======
+>>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
 =======
 >>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
                     </connections>

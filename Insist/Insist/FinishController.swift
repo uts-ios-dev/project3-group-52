@@ -41,15 +41,21 @@ class FinishController: UIViewController, MKMapViewDelegate {
 //        let shareButton = ShareButton(frame: CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50), content: content)
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         let sourceLocation = record.startLocation
         let destinationLocation = record.endLocation
         let sourcePin = customPin(pinTitle: "Start", pinSubTitle: "Start point", location: sourceLocation)
         let destinationPin = customPin(pinTitle: "End", pinSubTitle: "End point", location: destinationLocation)
 =======
+=======
+>>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
         let sourceLocation = CLLocationCoordinate2D(latitude:-33.923164, longitude:151.18543)
         let destinationLocation = CLLocationCoordinate2D(latitude:-33.883238, longitude:151.200494)
         let sourcePin = customPin(pinTitle: "Mascot", pinSubTitle: "Home", location: sourceLocation)
         let destinationPin = customPin(pinTitle: "Ultimo", pinSubTitle: "UTS", location: destinationLocation)
+<<<<<<< HEAD
+>>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
+=======
 >>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
         self.mapView.addAnnotation(sourcePin)
         self.mapView.addAnnotation(destinationPin)
@@ -77,6 +83,7 @@ class FinishController: UIViewController, MKMapViewDelegate {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         //        print("locations = \(locValue.latitude) \(locValue.longitude)")
@@ -91,6 +98,9 @@ class FinishController: UIViewController, MKMapViewDelegate {
     
     
         func shareFB(_ sender: Any) {
+=======
+//    @IBAction func shareFB(_ sender: Any) {
+>>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
 =======
 //    @IBAction func shareFB(_ sender: Any) {
 >>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
