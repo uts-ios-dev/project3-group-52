@@ -33,6 +33,15 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         locationList.removeAll()
         distance = Measurement(value: 0, unit: UnitLength.meters)
         self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.activityType = .fitness
+            locationManager.startUpdatingLocation()
+            //locationManager.distanceFilter = 10
+            map.showsUserLocation = true
+        }
+        distanceLabel.isHidden = true
     }
     
     
@@ -41,14 +50,15 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         locationList.removeAll()
         runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         sender.isEnabled = false
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.activityType = .fitness
-            locationManager.startUpdatingLocation()
-            locationManager.distanceFilter = 10
-            map.showsUserLocation = true
-        }
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager.delegate = self
+//            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+//            locationManager.activityType = .fitness
+//            locationManager.startUpdatingLocation()
+//            locationManager.distanceFilter = 10
+//            map.showsUserLocation = true
+//        }
+        distanceLabel.isHidden = false
     }
     
     @IBAction func finishButton(_ sender: Any) {
@@ -70,11 +80,12 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             }
             else {
                 if let lastLocation = locationList.last {
-                    let dis = newLocation.distance(from: lastLocation)
-                    distance = distance + Measurement(value: dis, unit: UnitLength.meters)
+
                     //let coordinates = [lastLocation.coordinate, newLocation.coordinate]
                     //map.add(MKPolyline(coordinates: coordinates, count: 2))
                     let location = locations.last! as CLLocation
+                    let dis = newLocation.distance(from: lastLocation)
+                    distance = distance + Measurement(value: dis, unit: UnitLength.meters)
                     let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                     let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
                     map.setRegion(region, animated: true)

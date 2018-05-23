@@ -190,14 +190,6 @@
                                     <!--2015-01-01 11:00:00 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM4-5M-3qv">
-                                <rect key="frame" x="60" y="588" width="254" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Already have an account? Log in now"/>
-                                <connections>
-                                    <segue destination="fsA-1k-tIN" kind="show" id="f9X-6H-5e4"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOb-1M-Ngy">
                                 <rect key="frame" x="16" y="401" width="105" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -220,6 +212,14 @@
                                 <connections>
                                     <action selector="registerButton:" destination="JA3-io-iLL" eventType="touchUpInside" id="Wet-tb-pBF"/>
                                     <segue destination="bOb-mC-R24" kind="show" id="CTO-EH-08G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM4-5M-3qv">
+                                <rect key="frame" x="60" y="588" width="254" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Already have an account? Log in now"/>
+                                <connections>
+                                    <segue destination="fsA-1k-tIN" kind="show" id="f9X-6H-5e4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -245,7 +245,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03P-SU-ymP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="run" translatesAutoresizingMaskIntoConstraints="NO" id="03P-SU-ymP">
                                 <rect key="frame" x="7" y="102" width="145" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwZ-4T-Uem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2913" y="874"/>
+            <point key="canvasLocation" x="2912.8000000000002" y="873.39901477832518"/>
         </scene>
         <!--Running-->
         <scene sceneID="amn-n4-ahX">
@@ -459,10 +459,11 @@
         <image name="Home" width="25" height="23"/>
         <image name="Profile" width="25" height="25"/>
         <image name="Score" width="23" height="23"/>
+        <image name="run" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="imB-hV-Mui"/>
-        <segue reference="gXI-Cf-51M"/>
+        <segue reference="CTO-EH-08G"/>
+        <segue reference="yU5-s9-5AA"/>
         <segue reference="f9X-6H-5e4"/>
     </inferredMetricsTieBreakers>
 </document>
