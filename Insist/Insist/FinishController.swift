@@ -15,10 +15,11 @@ import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
 
-class FinishController: UIViewController, MKMapViewDelegate {
+class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-//    @IBOutlet weak var shareonFB: UIButton!
+    var endLocationManager = CLLocationManager()
+    //    @IBOutlet weak var shareonFB: UIButton!
     
     class customPin: NSObject,MKAnnotation {
         var coordinate: CLLocationCoordinate2D
@@ -34,16 +35,18 @@ class FinishController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let loginButton = LoginButton(publishPermissions: [.managePages, .publishPages])
-//        loginButton.frame = CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50)
-//        view.addSubview(loginButton)
-//        let content = LinkShareContent.init(url: URL)
-//        let shareButton = ShareButton(frame: CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50), content: content)
-        
-        let sourceLocation = CLLocationCoordinate2D(latitude:-33.923164, longitude:151.18543)
-        let destinationLocation = CLLocationCoordinate2D(latitude:-33.883238, longitude:151.200494)
-        let sourcePin = customPin(pinTitle: "Mascot", pinSubTitle: "Home", location: sourceLocation)
-        let destinationPin = customPin(pinTitle: "Ultimo", pinSubTitle: "UTS", location: destinationLocation)
+        //        let loginButton = LoginButton(publishPermissions: [.managePages, .publishPages])
+        //        loginButton.frame = CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50)
+        //        view.addSubview(loginButton)
+        //        let content = LinkShareContent.init(url: URL)
+        //        let shareButton = ShareButton(frame: CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50), content: content)
+        self.endLocationManager = CLLocationManager()
+        let startLocation = record.startLocation
+        let locValue = record.endLocation
+        let sourceLocation = CLLocationCoordinate2D(latitude:startLocation.coordinate.latitude, longitude:startLocation.coordinate.longitude)
+        let destinationLocation = CLLocationCoordinate2D(latitude:locValue.coordinate.latitude, longitude:locValue.coordinate.longitude)
+        let sourcePin = customPin(pinTitle: "Start", pinSubTitle: "Start point", location: sourceLocation)
+        let destinationPin = customPin(pinTitle: "End", pinSubTitle: "End point", location: destinationLocation)
         self.mapView.addAnnotation(sourcePin)
         self.mapView.addAnnotation(destinationPin)
         let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
@@ -69,51 +72,58 @@ class FinishController: UIViewController, MKMapViewDelegate {
         self.mapView.delegate = self
     }
     
-//    @IBAction func shareFB(_ sender: Any) {
-//        let content = LinkShareContent.init(url: .init(fileURLWithPath: "https://developers.facebook.com/docs/sharing/ios"))
-//        let shareDialog = ShareDialog(content: content)
-//        shareDialog.mode = .native
-//        shareDialog.failsOnInvalidData = true
-//        shareDialog.completion = { result in
-//            // Handle share results
-//        }
-//
-//
-//        try shareDialog.show()
-        
-//        let connection = GraphRequestConnection()
-//        connection.add(GraphRequest(graphPath: "me/feed", parameters: ["message": "text to post on Facebook"], accessToken: AccessToken.current, httpMethod: .POST, apiVersion: .defaultVersion)) { httpResponse, result in
-//            switch result {
-//            case .success(let response):
-//                print("Graph Request Succeeded: \(response)")
-//            case .failed(let error):
-//                print("Graph Request Failed: \(error)")
-//            }
-//        }
-//        connection.start()
-
-//        if FBSDKAccessToken.current().hasGranted("publish_pages") {
-//            publishMessage()
-//        }
-        
-//        if (!FBSDKAccessToken.current().hasGranted("publish_to_groups")) {
-//            print("Request publish_to_groups permissions")
-//            requestPublishPermissions()
-//            publishMessage()
-//        }
-//        else {
-//            publishMessage()
-//        }
-//    }
+    func endLocationManager(manager: CLLocationManager!,   didUpdateLocations locations: [AnyObject]!) {
+        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+    }
     
-//        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-//            return // No image selected.
-//        }
-//
-//        let photo = Photo(image: image, userGenerated: true)
-//        let content = PhotoShareContent(photos: [photo])
-//        try ShareDialog.show(from: self, content: content)
-//    }
+    
+    
+    
+    //    @IBAction func shareFB(_ sender: Any) {
+    //        let content = LinkShareContent.init(url: .init(fileURLWithPath: "https://developers.facebook.com/docs/sharing/ios"))
+    //        let shareDialog = ShareDialog(content: content)
+    //        shareDialog.mode = .native
+    //        shareDialog.failsOnInvalidData = true
+    //        shareDialog.completion = { result in
+    //            // Handle share results
+    //        }
+    //
+    //
+    //        try shareDialog.show()
+    
+    //        let connection = GraphRequestConnection()
+    //        connection.add(GraphRequest(graphPath: "me/feed", parameters: ["message": "text to post on Facebook"], accessToken: AccessToken.current, httpMethod: .POST, apiVersion: .defaultVersion)) { httpResponse, result in
+    //            switch result {
+    //            case .success(let response):
+    //                print("Graph Request Succeeded: \(response)")
+    //            case .failed(let error):
+    //                print("Graph Request Failed: \(error)")
+    //            }
+    //        }
+    //        connection.start()
+    
+    //        if FBSDKAccessToken.current().hasGranted("publish_pages") {
+    //            publishMessage()
+    //        }
+    
+    //        if (!FBSDKAccessToken.current().hasGranted("publish_to_groups")) {
+    //            print("Request publish_to_groups permissions")
+    //            requestPublishPermissions()
+    //            publishMessage()
+    //        }
+    //        else {
+    //            publishMessage()
+    //        }
+    //    }
+    
+    //        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+    //            return // No image selected.
+    //        }
+    //
+    //        let photo = Photo(image: image, userGenerated: true)
+    //        let content = PhotoShareContent(photos: [photo])
+    //        try ShareDialog.show(from: self, content: content)
+    //    }
     
     @IBAction func share(_ sender: Any) {
         print("share")
@@ -131,36 +141,36 @@ class FinishController: UIViewController, MKMapViewDelegate {
         return renderer
     }
     
-//    func publishMessage()
-//    {
-//        let messageToPost = "test"
-//
-//        if (messageToPost.isEmpty) {
-//            return
-//        }
-//
-//        FBSDKGraphRequest.init(graphPath: "me/feed", parameters: ["message" : messageToPost], httpMethod: "POST").start(completionHandler: { (connection, result, error) -> Void in
-//            if let error = error {
-//                print("Error: \(error)")
-//            } else {
-//                print("Success")
-//                //self.myTextView.text = ""
-//            }
-//        })
-//    }
-//
-//    func requestPublishPermissions()
-//    {
-//        let login: FBSDKLoginManager = FBSDKLoginManager()
-//
-//        login.logIn(withPublishPermissions: ["publish_to_groups"], from: self) { (result, error) in
-//            if (error != nil) {
-//                print(error!)
-//            } else if (result?.isCancelled)! {
-//                print("Canceled")
-//            } else if (result?.grantedPermissions.contains("publish_to_groups"))! {
-//                print("permissions granted")
-//            }
-//        }
-//    }
+    //    func publishMessage()
+    //    {
+    //        let messageToPost = "test"
+    //
+    //        if (messageToPost.isEmpty) {
+    //            return
+    //        }
+    //
+    //        FBSDKGraphRequest.init(graphPath: "me/feed", parameters: ["message" : messageToPost], httpMethod: "POST").start(completionHandler: { (connection, result, error) -> Void in
+    //            if let error = error {
+    //                print("Error: \(error)")
+    //            } else {
+    //                print("Success")
+    //                //self.myTextView.text = ""
+    //            }
+    //        })
+    //    }
+    //
+    //    func requestPublishPermissions()
+    //    {
+    //        let login: FBSDKLoginManager = FBSDKLoginManager()
+    //
+    //        login.logIn(withPublishPermissions: ["publish_to_groups"], from: self) { (result, error) in
+    //            if (error != nil) {
+    //                print(error!)
+    //            } else if (result?.isCancelled)! {
+    //                print("Canceled")
+    //            } else if (result?.grantedPermissions.contains("publish_to_groups"))! {
+    //                print("permissions granted")
+    //            }
+    //        }
+    //    }
 }
