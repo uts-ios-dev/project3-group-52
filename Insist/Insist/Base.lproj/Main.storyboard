@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -355,8 +354,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-2x-B3o">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-2x-B3o">
                                 <rect key="frame" x="16" y="154" width="343" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-GY-0xk">
                                 <rect key="frame" x="263" y="562" width="50" height="40"/>
@@ -367,16 +367,18 @@
                                     <segue destination="bOb-mC-R24" kind="show" id="imB-hV-Mui"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-L8-tX1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-L8-tX1">
                                 <rect key="frame" x="61" y="561" width="58" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Share"/>
                                 <connections>
                                     <action selector="share:" destination="o0E-4G-glO" eventType="touchUpInside" id="TyT-0v-M7z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="CONGRATULATIONS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Mb-vBr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONGRATULATIONS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Mb-vBr">
                                 <rect key="frame" x="16" y="93" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -387,37 +389,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Share on FaceBook"/>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-2Y-72K">
-                                <rect key="frame" x="14" y="496" width="347" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="lLV-Tu-d1w"/>
-                                </constraints>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Na5-2Y-72K" firstAttribute="leading" secondItem="Wde-2x-B3o" secondAttribute="leading" id="66P-SH-2cd"/>
-                            <constraint firstItem="Na5-2Y-72K" firstAttribute="leading" secondItem="N5v-Us-vZ3" secondAttribute="leadingMargin" id="9Dg-yq-Aw6"/>
-                            <constraint firstAttribute="bottom" secondItem="Na5-2Y-72K" secondAttribute="bottom" constant="287" id="IMN-Cr-Slu"/>
-                            <constraint firstItem="Na5-2Y-72K" firstAttribute="trailing" secondItem="N5v-Us-vZ3" secondAttribute="trailingMargin" id="Vgt-Hh-Dno"/>
-                            <constraint firstItem="Na5-2Y-72K" firstAttribute="trailing" secondItem="cud-Mb-vBr" secondAttribute="trailing" id="aEh-Ik-b1T"/>
-                            <constraint firstItem="Tft-L8-tX1" firstAttribute="top" secondItem="Na5-2Y-72K" secondAttribute="bottom" constant="36" id="c7d-3b-PWx"/>
-                            <constraint firstItem="Na5-2Y-72K" firstAttribute="top" secondItem="Wde-2x-B3o" secondAttribute="bottom" constant="85" id="f0Y-2t-DUw"/>
-                            <constraint firstItem="Na5-2Y-72K" firstAttribute="leading" secondItem="cud-Mb-vBr" secondAttribute="leading" id="vs4-ke-0lr"/>
-                            <constraint firstItem="Na5-2Y-72K" firstAttribute="trailing" secondItem="Wde-2x-B3o" secondAttribute="trailing" id="xi6-Ws-QQD"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="q3O-UV-cdA"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Wde-2x-B3o" id="8ks-mq-A0C"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <outlet property="shareonFB" destination="Ik8-AR-eOm" id="OsC-ZX-BTG"/>
-                        <outlet property="slider" destination="Na5-2Y-72K" id="eD0-Yg-s5X"/>
-=======
->>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
-=======
->>>>>>> f9754285ac67ce247997fa9addd03fca171679d2
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVZ-gK-nYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
