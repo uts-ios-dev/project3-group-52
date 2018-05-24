@@ -44,21 +44,15 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         distanceLabel.isHidden = true
     }
     
-    
     @IBAction func startButton(_ sender: UIButton) {
-        distance = Measurement(value: 0, unit: UnitLength.meters)
         locationList.removeAll()
         runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         sender.isEnabled = false
-        //        if CLLocationManager.locationServicesEnabled() {
-        //            locationManager.delegate = self
-        //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        //            locationManager.activityType = .fitness
-        //            locationManager.startUpdatingLocation()
-        //            locationManager.distanceFilter = 10
-        //            map.showsUserLocation = true
-        //        }
-        distanceLabel.isHidden = false
+        if CLLocationManager.locationServicesEnabled() {
+            distance = Measurement(value: 0, unit: UnitLength.meters)
+            locationManager.distanceFilter = 10
+            distanceLabel.isHidden = false
+        }
     }
     
     @IBAction func finishButton(_ sender: Any) {
