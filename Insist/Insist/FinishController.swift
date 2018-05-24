@@ -15,9 +15,10 @@ import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
 
-class FinishController: UIViewController, MKMapViewDelegate {
+class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    var endLocationManager = CLLocationManager()
     //    @IBOutlet weak var shareonFB: UIButton!
     
     class customPin: NSObject,MKAnnotation {
@@ -40,10 +41,12 @@ class FinishController: UIViewController, MKMapViewDelegate {
         //        let content = LinkShareContent.init(url: URL)
         //        let shareButton = ShareButton(frame: CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50), content: content)
         
-        let sourceLocation = CLLocationCoordinate2D(latitude:-33.923164, longitude:151.18543)
-        let destinationLocation = CLLocationCoordinate2D(latitude:-33.883238, longitude:151.200494)
-        let sourcePin = customPin(pinTitle: "Mascot", pinSubTitle: "Home", location: sourceLocation)
-        let destinationPin = customPin(pinTitle: "Ultimo", pinSubTitle: "UTS", location: destinationLocation)
+        let startLocation = record.startLocation
+        let locValue = record.endLocation
+        let sourceLocation = CLLocationCoordinate2DMake(startLocation.coordinate.latitude, startLocation.coordinate.longitude)
+        let destinationLocation = CLLocationCoordinate2DMake(locValue.coordinate.latitude, locValue.coordinate.longitude)
+        let sourcePin = customPin(pinTitle: "Start", pinSubTitle: "Start point", location: sourceLocation)
+        let destinationPin = customPin(pinTitle: "End", pinSubTitle: "End point", location: destinationLocation)
         self.mapView.addAnnotation(sourcePin)
         self.mapView.addAnnotation(destinationPin)
         let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
@@ -68,6 +71,9 @@ class FinishController: UIViewController, MKMapViewDelegate {
         }
         self.mapView.delegate = self
     }
+    
+    
+    
     
     //    @IBAction func shareFB(_ sender: Any) {
     //        let content = LinkShareContent.init(url: .init(fileURLWithPath: "https://developers.facebook.com/docs/sharing/ios"))
@@ -117,7 +123,7 @@ class FinishController: UIViewController, MKMapViewDelegate {
     
     @IBAction func share(_ sender: Any) {
         print("share")
-        let myShare = "Test share"
+        let myShare = "Share by Insist: \(user.username) ran \(record.distance) today!"
         // let image: UIImage = UIImage(named: "Home")!
         //let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [myShare, image], applicationActivities: nil)
         let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [myShare], applicationActivities: nil)
