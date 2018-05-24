@@ -52,6 +52,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             distance = Measurement(value: 0, unit: UnitLength.meters)
             locationManager.distanceFilter = 10
             distanceLabel.isHidden = false
+            distanceLabel.text = "Distance: \(MeasurementFormatter().string(from: distance))"
         }
     }
     

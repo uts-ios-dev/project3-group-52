@@ -23,6 +23,7 @@ class ProfileController: UIViewController {
             UserProfile.loadCurrent { (profile) in
                 if let full = UserProfile.current?.fullName {
                     self.name.text = "Name: \(full)"
+                    //user.username = full
                 }
                 if let profilePictureURL = UserProfile.current?.imageURLWith(UserProfile.PictureAspectRatio.normal, size: CGSize.init()) {
                     let data = try? Data(contentsOf: profilePictureURL)
@@ -48,9 +49,11 @@ class ProfileController: UIViewController {
                 print("Graph Request Succeeded: \(response)")
                 if let dob = response.dictionaryValue?["birthday"] {
                     self.DOB.text = "Birthday: \(dob)"
+                    //user.birthday = dob as! Date
                 }
                 if let email = response.dictionaryValue?["email"] {
                     self.email.text = "Email: \(email)"
+                    user.email = email as! String
                 }
             case .failed(let error):
                 print("Graph Request Failed: \(error)")

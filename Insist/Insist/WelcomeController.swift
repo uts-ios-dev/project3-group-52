@@ -27,6 +27,12 @@ class WelcomeController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
             navigationController?.pushViewController(vc, animated: true)
+            
+            UserProfile.loadCurrent { (profile) in
+                if let full = UserProfile.current?.fullName {
+                    user.username = full
+                }
+            }
         }
     }
     
