@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgH-vA-yta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="873"/>
+            <point key="canvasLocation" x="365" y="1131"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="B0B-2b-hKI">
@@ -83,41 +83,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA2-ad-H5h">
-                                <rect key="frame" x="269" y="636" width="53" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYk-6n-NQM">
+                                <rect key="frame" x="137" y="655" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Log in"/>
-                                <connections>
-                                    <action selector="loginButton:" destination="O7I-vq-aUk" eventType="touchUpInside" id="9UE-HU-0S4"/>
-                                    <segue destination="fsA-1k-tIN" kind="show" id="kkC-HS-DAL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYk-6n-NQM">
-                                <rect key="frame" x="153" y="690" width="68" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Enter"/>
+                                <state key="normal" title="Enter" image="WechatIMG7"/>
                                 <connections>
                                     <segue destination="bOb-mC-R24" kind="show" id="6vz-3x-cZJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to INSIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77Y-ec-Iuc">
-                                <rect key="frame" x="16" y="201" width="343" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-1y-K0c">
+                                <rect key="frame" x="50" y="679" width="65" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="-1"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-1y-K0c">
-                                <rect key="frame" x="43" y="636" width="66" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Sign up"/>
+                                <state key="normal" title="Sign up" image="signup"/>
                                 <connections>
                                     <action selector="signupButton:" destination="O7I-vq-aUk" eventType="touchUpInside" id="3Ej-U5-Ajg"/>
                                     <segue destination="JA3-io-iLL" kind="show" id="yU5-s9-5AA"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WELCOME" translatesAutoresizingMaskIntoConstraints="NO" id="uOW-nG-uIf">
+                                <rect key="frame" x="16" y="175" width="343" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA2-ad-H5h">
+                                <rect key="frame" x="260" y="679" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log in" image="login"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="O7I-vq-aUk" eventType="touchUpInside" id="9UE-HU-0S4"/>
+                                    <segue destination="fsA-1k-tIN" kind="show" id="kkC-HS-DAL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -190,6 +183,14 @@
                                     <!--2015-01-01 11:00:00 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM4-5M-3qv">
+                                <rect key="frame" x="60" y="588" width="254" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Already have an account? Log in now"/>
+                                <connections>
+                                    <segue destination="fsA-1k-tIN" kind="show" id="f9X-6H-5e4"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOb-1M-Ngy">
                                 <rect key="frame" x="16" y="401" width="105" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,14 +215,6 @@
                                     <segue destination="bOb-mC-R24" kind="show" id="CTO-EH-08G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM4-5M-3qv">
-                                <rect key="frame" x="60" y="588" width="254" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Already have an account? Log in now"/>
-                                <connections>
-                                    <segue destination="fsA-1k-tIN" kind="show" id="f9X-6H-5e4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nfp-QW-EBb"/>
@@ -235,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8M-tO-Dl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="873.39901477832518"/>
+            <point key="canvasLocation" x="1092" y="1131"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ihW-kE-DvP">
@@ -284,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwZ-4T-Uem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2912.8000000000002" y="873.39901477832518"/>
+            <point key="canvasLocation" x="2913" y="1131"/>
         </scene>
         <!--Running-->
         <scene sceneID="amn-n4-ahX">
@@ -295,42 +288,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time: 00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZV-nf-m0y">
-                                <rect key="frame" x="27" y="485" width="320" height="55"/>
+                                <rect key="frame" x="27" y="497" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YRh-e0-n6s">
-                                <rect key="frame" x="16" y="122" width="343" height="296"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f54-bc-ruF">
+                                <rect key="frame" x="225" y="584" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f54-bc-ruF">
-                                <rect key="frame" x="255" y="603" width="70" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Finish"/>
+                                <state key="normal" title="Finish" image="FINISH"/>
                                 <connections>
                                     <action selector="finishButton:" destination="tEf-sc-9Zr" eventType="touchUpInside" id="D2s-CB-WjG"/>
                                     <segue destination="o0E-4G-glO" kind="show" id="zWN-3w-MwZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRz-aK-mNS">
-                                <rect key="frame" x="50" y="603" width="98" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRz-aK-mNS">
+                                <rect key="frame" x="65" y="584" width="100" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Start" image="START"/>
                                 <connections>
                                     <action selector="startButton:" destination="tEf-sc-9Zr" eventType="touchUpInside" id="0pK-Gv-W1b"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance: 0 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xau-af-u0A">
-                                <rect key="frame" x="27" y="438" width="320" height="51"/>
+                                <rect key="frame" x="27" y="465" width="320" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YRh-e0-n6s">
+                                <rect key="frame" x="16" y="109" width="343" height="296"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7kY-cS-sto"/>
@@ -344,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TzA-qN-Bo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2912.8000000000002" y="-603.69458128078816"/>
+            <point key="canvasLocation" x="2913" y="-824"/>
         </scene>
         <!--Status-->
         <scene sceneID="KG8-RI-DgT">
@@ -358,36 +349,33 @@
                                 <rect key="frame" x="16" y="154" width="343" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-GY-0xk">
-                                <rect key="frame" x="263" y="562" width="50" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-GY-0xk">
+                                <rect key="frame" x="228" y="483" width="96" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back" image="BACK"/>
                                 <connections>
                                     <segue destination="bOb-mC-R24" kind="show" id="imB-hV-Mui"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-L8-tX1">
-                                <rect key="frame" x="61" y="561" width="58" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-L8-tX1">
+                                <rect key="frame" x="52" y="483" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Share"/>
+                                <state key="normal" title="Share" image="SHARE"/>
                                 <connections>
                                     <action selector="share:" destination="o0E-4G-glO" eventType="touchUpInside" id="TyT-0v-M7z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONGRATULATIONS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-Mb-vBr">
-                                <rect key="frame" x="16" y="93" width="343" height="45"/>
+                                <rect key="frame" x="67" y="98" width="240.66666666666663" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ik8-AR-eOm">
-                                <rect key="frame" x="27" y="616" width="192" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ik8-AR-eOm">
+                                <rect key="frame" x="52" y="611" width="272" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Share on FaceBook"/>
+                                <state key="normal" title="Share on FaceBook" image="SHARE ON FB"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -399,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVZ-gK-nYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4000.8000000000002" y="-603.69458128078816"/>
+            <point key="canvasLocation" x="3899" y="-824"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hN8-EW-5zc">
@@ -418,7 +406,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5C-W0-XFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="134"/>
+            <point key="canvasLocation" x="1785" y="133"/>
         </scene>
         <!--Record-->
         <scene sceneID="Ukg-0b-1Oq">
@@ -456,14 +444,23 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BACK" width="308" height="310"/>
+        <image name="FINISH" width="308" height="312"/>
         <image name="Home" width="25" height="23"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="SHARE" width="308" height="312"/>
+        <image name="SHARE ON FB" width="4650" height="900"/>
+        <image name="START" width="310" height="310"/>
         <image name="Score" width="23" height="23"/>
+        <image name="WELCOME" width="760" height="184"/>
+        <image name="WechatIMG7" width="232" height="236"/>
+        <image name="login" width="236" height="240"/>
         <image name="run" width="225" height="225"/>
+        <image name="signup" width="242" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CTO-EH-08G"/>
-        <segue reference="yU5-s9-5AA"/>
+        <segue reference="imB-hV-Mui"/>
+        <segue reference="gXI-Cf-51M"/>
         <segue reference="f9X-6H-5e4"/>
     </inferredMetricsTieBreakers>
 </document>

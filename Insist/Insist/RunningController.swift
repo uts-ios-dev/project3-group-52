@@ -13,7 +13,7 @@ var user = User()
 var record = Record()
 
 class RunningController: UIViewController, CLLocationManagerDelegate {
-
+    
     var runTime: Int = 0
     var runTimer: Timer?
     var hour: Int = 0
@@ -22,11 +22,11 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     var distance: Measurement = Measurement(value: 0, unit: UnitLength.meters)
     let locationManager = CLLocationManager()
     var locationList: [CLLocation] = []
-
+    
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var runTimeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         runTimeLabel.text = "Time: 00:00:00"
@@ -50,14 +50,14 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         locationList.removeAll()
         runTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         sender.isEnabled = false
-//        if CLLocationManager.locationServicesEnabled() {
-//            locationManager.delegate = self
-//            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-//            locationManager.activityType = .fitness
-//            locationManager.startUpdatingLocation()
-//            locationManager.distanceFilter = 10
-//            map.showsUserLocation = true
-//        }
+        //        if CLLocationManager.locationServicesEnabled() {
+        //            locationManager.delegate = self
+        //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        //            locationManager.activityType = .fitness
+        //            locationManager.startUpdatingLocation()
+        //            locationManager.distanceFilter = 10
+        //            map.showsUserLocation = true
+        //        }
         distanceLabel.isHidden = false
     }
     
@@ -80,7 +80,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             }
             else {
                 if let lastLocation = locationList.last {
-
+                    
                     //let coordinates = [lastLocation.coordinate, newLocation.coordinate]
                     //map.add(MKPolyline(coordinates: coordinates, count: 2))
                     let location = locations.last! as CLLocation
