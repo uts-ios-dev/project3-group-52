@@ -32,6 +32,7 @@ class WelcomeController: UIViewController {
                 if let full = UserProfile.current?.fullName {
                     user.username = full
                 }
+                self.getOtherInfo()
             }
         }
     }
@@ -51,6 +52,27 @@ class WelcomeController: UIViewController {
             }))
             present(accountAlert, animated: true, completion: nil)
         }
+    }
+    
+    func getOtherInfo() {
+        let connection = GraphRequestConnection()
+        connection.add(GraphRequest(graphPath: "/me", parameters: ["fields":"email, birthday"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)) { httpResponse, result in
+            switch result {
+            case .success(let response):
+                print("Graph Request Succeeded: \(response)")
+                if let dob = response.dictionaryValue?["birthday"] {
+                    //self.DOB.text = "Birthday: \(dob)"
+                    user.birthday = dob as! String
+                }
+                if let email = response.dictionaryValue?["email"] {
+                    //self.email.text = "Email: \(email)"
+                    user.email = email as! String
+                }
+            case .failed(let error):
+                print("Graph Request Failed: \(error)")
+            }
+        }
+        connection.start()
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton!) {

@@ -39,7 +39,7 @@ class RegisterController: UIViewController {
         {
             user.username = name.text!
             user.email = email.text!
-            user.birthday = birthday.date
+            user.birthday = DateFormatter.localizedString(from: birthday.date, dateStyle: .medium, timeStyle: .none)
             user.password = password.text!
 //            print(user.username)
 //            print(user.email)

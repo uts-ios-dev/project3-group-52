@@ -12,7 +12,7 @@ class User
 {
     var _username: String = ""
     var _email: String = ""
-    var _birthday: Date = Date.init()
+    var _birthday: String = ""
     var _password: String = ""
     var _totaldistance: String = ""
     var _userTime: String = ""
@@ -41,7 +41,7 @@ class User
         }
     }
     
-    var birthday: Date
+    var birthday: String
     {
         get
         {
