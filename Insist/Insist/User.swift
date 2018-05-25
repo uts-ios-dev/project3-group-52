@@ -14,7 +14,6 @@ class User
     var _email: String = ""
     var _birthday: String = ""
     var _password: String = ""
-    var _userTime: Int = 0
     
     var username: String
     {
@@ -51,19 +50,6 @@ class User
             _birthday = newValue
         }
     }
-    
-    var userTime: Int
-    {
-        get
-        {
-            return _userTime
-        }
-        set
-        {
-            _userTime = newValue
-        }
-    }
-    
     
     var password: String
     {

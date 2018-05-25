@@ -264,13 +264,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0d-tB-u68">
-                                <rect key="frame" x="16" y="327" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Ag-XT-Iwd"/>
@@ -281,7 +274,6 @@
                         <outlet property="email" destination="AWz-RA-hFP" id="a6P-CI-2fe"/>
                         <outlet property="name" destination="Obb-sO-xUw" id="g9O-Gb-Hud"/>
                         <outlet property="picture" destination="03P-SU-ymP" id="3Ih-6u-cdV"/>
-                        <outlet property="time" destination="v0d-tB-u68" id="s8h-xu-vM7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwZ-4T-Uem" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -468,7 +460,7 @@
         <image name="signup" width="242" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oab-IT-H95"/>
+        <segue reference="imB-hV-Mui"/>
         <segue reference="gXI-Cf-51M"/>
         <segue reference="f9X-6H-5e4"/>
     </inferredMetricsTieBreakers>

@@ -10,8 +10,9 @@ pod 'FacebookLogin'
 pod 'FacebookShare'
 
 pod 'Firebase/Core'
-pod 'Firebase/Database'
+pod 'Firebase/Firestore'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'LBTAComponents'
 end

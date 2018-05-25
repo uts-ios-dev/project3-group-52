@@ -8,6 +8,9 @@
 
 import UIKit
 import MapKit
+import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
 var user = User()
 var record = Record()
@@ -52,7 +55,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             distance = Measurement(value: 0, unit: UnitLength.meters)
             locationManager.distanceFilter = 10
             distanceLabel.isHidden = false
-            distanceLabel.text = "Distance: \(MeasurementFormatter().string(from: distance))"
+            distanceLabel.text = MeasurementFormatter().string(from: distance)
         }
     }
     
@@ -64,8 +67,27 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             record.endLocation = locationList.last!
             locationList.removeAll()
         }
-        record.distance = MeasurementFormatter().string(from: distance)
-        user.userTime += sec
+        record.distance = distanceLabel.text!
+        saveData()
+    }
+    
+    func saveData() {
+        if Auth.auth().currentUser != nil {
+            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance,
+                "time": record.time])
+            
+//            var ref: DocumentReference? = nil
+//            ref = db.collection("users").document("\(user.email)").collection("records").addDocument(data:[
+//                "distance": record.distance,
+//                "time": record.time
+//            ]){ err in
+//                    if let err = err {
+//                        print("Error writing document: \(err)")
+//                    } else {
+//                        print("Document successfully written!")
+//                    }
+//            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -87,7 +109,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
                     map.setRegion(region, animated: true)
                 }
                 locationList.append(newLocation)
-                distanceLabel.text = "Distance: \(MeasurementFormatter().string(from: distance))"
+                distanceLabel.text = MeasurementFormatter().string(from: distance)
             }
         }
     }
@@ -106,7 +128,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         let secString = sec > 9 ? "\(sec)" : "0\(sec)"
         let minString = min > 9 ? "\(min)" : "0\(min)"
         let hourString = hour > 9 ? "\(hour)" : "0\(hour)"
-        runTimeLabel.text = "Time: \(hourString):\(minString):\(secString)"
+        runTimeLabel.text = "\(hourString):\(minString):\(secString)"
     }
     
     override func didReceiveMemoryWarning() {

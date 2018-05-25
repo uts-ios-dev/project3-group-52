@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import Firebase
+import FirebaseAuth
 
 class ProfileController: UIViewController {
     
@@ -31,11 +32,6 @@ class ProfileController: UIViewController {
             }
         }
         if Auth.auth().currentUser != nil {
-            let emailUser = Auth.auth().currentUser
-            if let emailUser = emailUser {
-                //let uid = emailUser.uid
-                user.email = emailUser.email!
-            }
             self.printInfo()
         }
     }
@@ -44,7 +40,7 @@ class ProfileController: UIViewController {
         self.name.text = user.username
         self.DOB.text = user.birthday
         self.email.text = user.email
-        self.printTime()
+        //self.printTime()
     }
     
 //    func getOtherInfo() {
@@ -68,16 +64,16 @@ class ProfileController: UIViewController {
 //        connection.start()
 //    }
     
-    func printTime() {
-        let hour = user.userTime / 3600
-        let min = (user.userTime % 3600) / 60
-        let sec = (user.userTime % 3600) % 60
-        
-        let secString = sec > 9 ? "\(sec)" : "0\(sec)"
-        let minString = min > 9 ? "\(min)" : "0\(min)"
-        let hourString = hour > 9 ? "\(hour)" : "0\(hour)"
-        time.text = "Total Time: \(hourString):\(minString):\(secString)"
-    }
+//    func printTime() {
+//        let hour = user.userTime / 3600
+//        let min = (user.userTime % 3600) / 60
+//        let sec = (user.userTime % 3600) % 60
+//
+//        let secString = sec > 9 ? "\(sec)" : "0\(sec)"
+//        let minString = min > 9 ? "\(min)" : "0\(min)"
+//        let hourString = hour > 9 ? "\(hour)" : "0\(hour)"
+//        time.text = "Total Time: \(hourString):\(minString):\(secString)"
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

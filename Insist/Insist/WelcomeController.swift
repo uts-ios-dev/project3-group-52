@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import Firebase
+import FirebaseAuth
 
 class WelcomeController: UIViewController {
     
@@ -41,6 +42,10 @@ class WelcomeController: UIViewController {
             self.switchToRun()
         }
         if Auth.auth().currentUser != nil {
+            let emailUser = Auth.auth().currentUser
+            if let emailUser = emailUser {
+                user.email = emailUser.email!
+            }
             self.switchToRun()
         }
     }
