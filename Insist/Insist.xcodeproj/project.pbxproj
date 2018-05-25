@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0608D20D20AE8B480028F98F /* RunningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0608D20C20AE8B480028F98F /* RunningController.swift */; };
+		0631989E20B8372100573384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0631989D20B8372100573384 /* GoogleService-Info.plist */; };
 		069C815920AF23330085ECE2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C815820AF23330085ECE2 /* LoginController.swift */; };
 		069C815B20AF233F0085ECE2 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C815A20AF233F0085ECE2 /* RegisterController.swift */; };
 		06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477E920AC238800CCBBDD /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0608D20C20AE8B480028F98F /* RunningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningController.swift; sourceTree = "<group>"; };
+		0631989D20B8372100573384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		069C815820AF23330085ECE2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		069C815A20AF233F0085ECE2 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		06A477E620AC238800CCBBDD /* Insist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				06A477F320AC238B00CCBBDD /* Assets.xcassets */,
 				06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */,
 				06A477F820AC238B00CCBBDD /* Info.plist */,
+				0631989D20B8372100573384 /* GoogleService-Info.plist */,
 				06A477F020AC238800CCBBDD /* Insist.xcdatamodeld */,
 				06A4780820AC2B9B00CCBBDD /* WelcomeController.swift */,
 				06ACD35720AC7CC300700BFC /* ProfileController.swift */,
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A477F720AC238B00CCBBDD /* LaunchScreen.storyboard in Resources */,
+				0631989E20B8372100573384 /* GoogleService-Info.plist in Resources */,
 				06A477F420AC238B00CCBBDD /* Assets.xcassets in Resources */,
 				06A477EF20AC238800CCBBDD /* Main.storyboard in Resources */,
 			);
@@ -216,6 +220,11 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/LBTAComponents/LBTAComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -226,6 +235,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTAComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

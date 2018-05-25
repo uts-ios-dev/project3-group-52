@@ -14,8 +14,7 @@ class User
     var _email: String = ""
     var _birthday: String = ""
     var _password: String = ""
-    var _totaldistance: String = ""
-    var _userTime: String = ""
+    var _userTime: Int = 0
     
     var username: String
     {
@@ -53,19 +52,7 @@ class User
         }
     }
     
-    var totaldistance: String
-    {
-        get
-        {
-            return _totaldistance
-        }
-        set
-        {
-            _totaldistance = newValue
-        }
-    }
-    
-    var userTime: String
+    var userTime: Int
     {
         get
         {

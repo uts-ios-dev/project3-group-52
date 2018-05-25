@@ -9,6 +9,7 @@
 import UIKit
 import FacebookLogin
 import FacebookCore
+import Firebase
 
 class ProfileController: UIViewController {
     
@@ -16,15 +17,12 @@ class ProfileController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var DOB: UILabel!
     @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var time: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if AccessToken.current != nil{
             UserProfile.loadCurrent { (profile) in
-//                if let full = UserProfile.current?.fullName {
-//                    self.name.text = "Name: \(full)"
-//                    //user.username = full
-//                }
                 if let profilePictureURL = UserProfile.current?.imageURLWith(UserProfile.PictureAspectRatio.normal, size: CGSize.init()) {
                     let data = try? Data(contentsOf: profilePictureURL)
                     self.picture.image = UIImage(data: data!)
@@ -32,17 +30,21 @@ class ProfileController: UIViewController {
                 self.printInfo()
             }
         }
-        else {
-            if user.email != "" {
-                self.printInfo()
+        if Auth.auth().currentUser != nil {
+            let emailUser = Auth.auth().currentUser
+            if let emailUser = emailUser {
+                //let uid = emailUser.uid
+                user.email = emailUser.email!
             }
+            self.printInfo()
         }
     }
     
     func printInfo() {
-        self.name.text = "Name: \(user.username)"
-        self.DOB.text = "Birthday: \(user.birthday)"
-        self.email.text = "Email: \(user.email)"
+        self.name.text = user.username
+        self.DOB.text = user.birthday
+        self.email.text = user.email
+        self.printTime()
     }
     
 //    func getOtherInfo() {
@@ -65,6 +67,17 @@ class ProfileController: UIViewController {
 //        }
 //        connection.start()
 //    }
+    
+    func printTime() {
+        let hour = user.userTime / 3600
+        let min = (user.userTime % 3600) / 60
+        let sec = (user.userTime % 3600) % 60
+        
+        let secString = sec > 9 ? "\(sec)" : "0\(sec)"
+        let minString = min > 9 ? "\(min)" : "0\(min)"
+        let hourString = hour > 9 ? "\(hour)" : "0\(hour)"
+        time.text = "Total Time: \(hourString):\(minString):\(secString)"
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

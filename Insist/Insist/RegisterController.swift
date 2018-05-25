@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FacebookCore
+import Firebase
 
 class RegisterController: UIViewController {
     
@@ -41,10 +41,14 @@ class RegisterController: UIViewController {
             user.email = email.text!
             user.birthday = DateFormatter.localizedString(from: birthday.date, dateStyle: .medium, timeStyle: .none)
             user.password = password.text!
-//            print(user.username)
-//            print(user.email)
-//            print(user.birthday)
-//            print(user.password)
+            Auth.auth().createUser(withEmail: user.email, password: user.password) { (authResult, error) in
+                if error != nil {
+                    print ("Can't Register")
+                }
+                else {
+                    print ("Success")
+                }
+            }
         }
     }
     

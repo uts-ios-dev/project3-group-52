@@ -65,6 +65,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             locationList.removeAll()
         }
         record.distance = MeasurementFormatter().string(from: distance)
+        user.userTime += sec
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
