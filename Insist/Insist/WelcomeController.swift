@@ -22,7 +22,6 @@ class WelcomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
-        //let loginButton = LoginButton(publishPermissions: [.publishActions])
         loginButton.frame = CGRect(x: view.frame.width / 10, y: view.frame.height / 2 + 170, width: 300, height: 50)
         view.addSubview(loginButton)
         if AccessToken.current != nil{

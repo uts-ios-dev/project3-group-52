@@ -11,6 +11,8 @@ import MapKit
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import FacebookCore
+import FacebookLogin
 
 var user = User()
 var record = Record()
@@ -73,20 +75,21 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     
     func saveData() {
         if Auth.auth().currentUser != nil {
-            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance,
-                "time": record.time])
-            
-//            var ref: DocumentReference? = nil
-//            ref = db.collection("users").document("\(user.email)").collection("records").addDocument(data:[
-//                "distance": record.distance,
-//                "time": record.time
-//            ]){ err in
-//                    if let err = err {
-//                        print("Error writing document: \(err)")
-//                    } else {
-//                        print("Document successfully written!")
-//                    }
-//            }
+            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time])
+        }
+        
+        if AccessToken.current != nil {
+            db.collection("users").document("\(user.email)").setData([
+                "name": user.username,
+                "birthday": user.birthday,
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+            }
+            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time])
         }
     }
     
