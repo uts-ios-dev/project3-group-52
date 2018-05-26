@@ -19,6 +19,10 @@ class ProfileController: UIViewController {
     @IBOutlet weak var DOB: UILabel!
     @IBOutlet weak var email: UILabel!
     
+    @IBAction func change(_ sender: Any) {
+        changeAccount = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if AccessToken.current != nil{

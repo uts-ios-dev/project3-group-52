@@ -13,6 +13,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 
+var changeAccount: Bool = false
+
 class WelcomeController: UIViewController {
     
     @IBOutlet weak var signup: UIButton!
@@ -21,9 +23,14 @@ class WelcomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
-        loginButton.frame = CGRect(x: view.frame.width / 10, y: view.frame.height / 2 + 170, width: 300, height: 50)
+        loginButton.frame = CGRect(x: view.frame.width / 10, y: view.frame.height / 2 + 200, width: 300, height: 50)
         view.addSubview(loginButton)
         self.logged()
+        if AccessToken.current != nil || Auth.auth().currentUser != nil {
+            if !changeAccount {
+                self.switchToRun()
+            }
+        }
     }
     
     @IBAction func signupButton(_ sender: Any) {
@@ -66,7 +73,7 @@ class WelcomeController: UIViewController {
                 }
             }
             self.authEmailLogout()
-            self.switchToRun()
+           // self.switchToRun()
         }
         
         if Auth.auth().currentUser != nil && AccessToken.current == nil {
@@ -91,7 +98,7 @@ class WelcomeController: UIViewController {
                     }
                 }
             }
-            self.switchToRun()
+            //self.switchToRun()
         }
     }
     

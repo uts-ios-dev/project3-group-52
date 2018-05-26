@@ -8,13 +8,24 @@
 
 import Firebase
 import FirebaseFirestore
+import FacebookCore
 import UIKit
 
 class RecordController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var Ly:Int = 0
+        if Auth.auth().currentUser != nil || AccessToken.current != nil {
+            showRecord()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func showRecord() {
+        var Ly:Int = 120
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
@@ -29,12 +40,12 @@ class RecordController: UIViewController {
                     let latestTime = userRecords["time"] as? String ?? ""
                     let latestDistance = userRecords["distance"] as? String ?? ""
                     recordLabel = UILabel()
-                    recordLabel.text = latestTime + "           " + latestDistance
+                    recordLabel.text = "⏱ " + latestTime + "      🏃🏻 " + latestDistance
                     recordLabel.sizeToFit()
-                    recordLabel.frame = CGRect(x: Int(self.view.frame.width / 4), y: Ly, width: 400, height: 20)
+                    recordLabel.frame = CGRect(x: 70, y: Ly, width: 400, height: 20)
+                    print(latestTime)
+                    print(latestDistance)
                     self.view.addSubview(recordLabel)
-                    //print(latestTime)
-                    //print(latestDistance)
                     Ly += 30
                 }
             }

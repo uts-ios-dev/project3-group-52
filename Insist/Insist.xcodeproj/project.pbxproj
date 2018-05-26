@@ -23,7 +23,6 @@
 		06E7564120ADC958005BAC9E /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564020ADC958005BAC9E /* FinishController.swift */; };
 		06E7564320ADCBCB005BAC9E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564220ADCBCB005BAC9E /* Record.swift */; };
 		06E7564520ADD031005BAC9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7564420ADD031005BAC9E /* User.swift */; };
-		06F0CD1D20B951DD00D4F579 /* Record1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0CD1C20B951DD00D4F579 /* Record1Controller.swift */; };
 		06F0CD1F20B966E400D4F579 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F0CD1E20B966E400D4F579 /* RecordController.swift */; };
 		C257E109E2E90C4AFBCFCDF5 /* Pods_Insist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +47,6 @@
 		06E7564020ADC958005BAC9E /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
 		06E7564220ADCBCB005BAC9E /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		06E7564420ADD031005BAC9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		06F0CD1C20B951DD00D4F579 /* Record1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record1Controller.swift; sourceTree = "<group>"; };
 		06F0CD1E20B966E400D4F579 /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
 		331527403A1CC2CE0EF10CBE /* Pods-Insist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Insist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Insist/Pods-Insist.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9CD7B7F0E12336DF92BD0F /* Pods_Insist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Insist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +103,6 @@
 				069C815820AF23330085ECE2 /* LoginController.swift */,
 				069C815A20AF233F0085ECE2 /* RegisterController.swift */,
 				06F0CD1E20B966E400D4F579 /* RecordController.swift */,
-				06F0CD1C20B951DD00D4F579 /* Record1Controller.swift */,
 				06E7564220ADCBCB005BAC9E /* Record.swift */,
 				06E7564420ADD031005BAC9E /* User.swift */,
 			);
@@ -289,7 +286,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F0CD1D20B951DD00D4F579 /* Record1Controller.swift in Sources */,
 				06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */,
 				06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */,
 				069C815B20AF233F0085ECE2 /* RegisterController.swift in Sources */,

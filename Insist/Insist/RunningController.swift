@@ -34,7 +34,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        runTimeLabel.text = "Time: 00:00:00"
+        runTimeLabel.text = "00:00:00"
         locationList.removeAll()
         distance = Measurement(value: 0, unit: UnitLength.meters)
         self.locationManager.requestWhenInUseAuthorization()
@@ -77,7 +77,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         
-        if Auth.auth().currentUser != nil {
+        if Auth.auth().currentUser != nil && AccessToken.current == nil{
             db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time])
         }
         
