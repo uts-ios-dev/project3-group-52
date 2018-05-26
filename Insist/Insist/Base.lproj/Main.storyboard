@@ -89,6 +89,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Enter" image="WechatIMG7"/>
                                 <connections>
+                                    <action selector="enter:" destination="O7I-vq-aUk" eventType="touchUpInside" id="2uf-Xd-PaR"/>
                                     <segue destination="bOb-mC-R24" kind="show" id="6vz-3x-cZJ"/>
                                 </connections>
                             </button>
@@ -460,8 +461,8 @@
         <image name="signup" width="242" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="imB-hV-Mui"/>
-        <segue reference="gXI-Cf-51M"/>
-        <segue reference="f9X-6H-5e4"/>
+        <segue reference="6vz-3x-cZJ"/>
+        <segue reference="yU5-s9-5AA"/>
+        <segue reference="kkC-HS-DAL"/>
     </inferredMetricsTieBreakers>
 </document>

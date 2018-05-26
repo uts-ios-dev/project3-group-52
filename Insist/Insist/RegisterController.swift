@@ -47,12 +47,11 @@ class RegisterController: UIViewController {
             user.password = password.text!
             Auth.auth().createUser(withEmail: user.email, password: user.password) { (authResult, error) in
                 if error != nil {
-                    let registerAlert = UIAlertController(title: "Can't Register", message: "Please enter the valid email address and your password must be 6 characters long or more", preferredStyle: .alert)
+                    let registerAlert = UIAlertController(title: "Can't Register", message: "Please enter valid email address and password must equal to or longer than 6 characters", preferredStyle: .alert)
                     registerAlert.addAction(UIAlertAction(title: "Back", style: .default, handler: { (action: UIAlertAction!) in
                         self.navigationController?.popViewController(animated: true)
                     }))
                     self.present(registerAlert, animated: true, completion: nil)
-                    //print (error)
                 }
                 else {
                     print ("Success")
@@ -62,24 +61,16 @@ class RegisterController: UIViewController {
                         "birthday": user.birthday,
                     ]) { err in
                         if let err = err {
-                            print("Error writing document: \(err)")
+                            let registerAlert = UIAlertController(title: "Can't write into database", message: "\(String(describing: err))", preferredStyle: .alert)
+                            registerAlert.addAction(UIAlertAction(title: "Back", style: .default, handler: { (action: UIAlertAction!) in
+                                self.navigationController?.popViewController(animated: true)
+                            }))
+                            self.present(registerAlert, animated: true, completion: nil)
+//                            print("Error writing document: \(err)")
                         } else {
                             print("Document successfully written!")
                         }
                     }
-                    
-                    
-//                    var ref: DocumentReference? = nil;
-//                    ref = db.collection("users").addDocument(data: [
-//                        "name": user.username,
-//                        "birthday": user.birthday,
-//                    ]) { err in
-//                        if let err = err {
-//                            print("Error adding document: \(err)")
-//                        } else {
-//                            print("Document added with ID: \(ref!.documentID)")
-//                        }
-//                    }
                 }
             }
         }

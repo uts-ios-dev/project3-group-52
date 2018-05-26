@@ -43,7 +43,6 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.activityType = .fitness
             locationManager.startUpdatingLocation()
-            //locationManager.distanceFilter = 10
             map.showsUserLocation = true
         }
         distanceLabel.isHidden = true

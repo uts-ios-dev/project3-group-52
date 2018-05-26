@@ -23,8 +23,7 @@ class LoginController: UIViewController {
     @IBAction func login(_ sender: Any) {
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error != nil {
-                print ("Can't login")
-                let loginAlert = UIAlertController(title: "Password", message: "Your password is incorrect", preferredStyle: .alert)
+                let loginAlert = UIAlertController(title: "Can't login", message: "Your password is incorrect", preferredStyle: .alert)
                 loginAlert.addAction(UIAlertAction(title: "Back", style: .default, handler: { (action: UIAlertAction!) in
                     self.navigationController?.popViewController(animated: true)
                 }))
