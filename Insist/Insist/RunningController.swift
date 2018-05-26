@@ -73,6 +73,10 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     }
     
     func saveData() {
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
         if Auth.auth().currentUser != nil {
             db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time])
         }

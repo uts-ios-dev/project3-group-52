@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwZ-4T-Uem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2912.8000000000002" y="1130.5418719211823"/>
+            <point key="canvasLocation" x="2913" y="1131"/>
         </scene>
         <!--Running-->
         <scene sceneID="amn-n4-ahX">
@@ -402,7 +402,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="tEf-sc-9Zr" kind="relationship" relationship="viewControllers" id="Bnh-mr-ItV"/>
-                        <segue destination="Dq4-E5-May" kind="relationship" relationship="viewControllers" id="9qt-e3-J97"/>
+                        <segue destination="iR8-tr-cL0" kind="relationship" relationship="viewControllers" id="k0M-J2-Xxh"/>
                         <segue destination="mMY-h0-Nai" kind="relationship" relationship="viewControllers" id="mZa-h2-3ug"/>
                     </connections>
                 </tabBarController>
@@ -411,20 +411,20 @@
             <point key="canvasLocation" x="1785" y="133"/>
         </scene>
         <!--Record-->
-        <scene sceneID="Ukg-0b-1Oq">
+        <scene sceneID="Irz-Fk-VOD">
             <objects>
-                <viewController title="Record" id="Dq4-E5-May" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iyR-vK-T7k">
+                <viewController id="iR8-tr-cL0" customClass="RecordController" customModule="Insist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EZW-cw-n5X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Rh5-Wi-pDI"/>
+                        <viewLayoutGuide key="safeArea" id="dAW-bB-xvV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Record" image="Score" selectedImage="Score" id="jEY-2J-TG4"/>
+                    <tabBarItem key="tabBarItem" title="Record" image="Score" selectedImage="Score" id="DQz-bD-ROU"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aT5-4B-EgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WvR-f4-CK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2913" y="134"/>
+            <point key="canvasLocation" x="2913" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Aj-1A-jwb">

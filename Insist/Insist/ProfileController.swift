@@ -18,7 +18,6 @@ class ProfileController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var DOB: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var time: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +31,10 @@ class ProfileController: UIViewController {
                     self.picture.image = UIImage(data: data!)
                     self.getOtherInfo()
                 }
-                self.printInfo()
             }
         }
         
-        if Auth.auth().currentUser != nil {
+        if Auth.auth().currentUser != nil && AccessToken.current == nil {
             let docRef = db.collection("users").document("\(user.email)")
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
@@ -49,8 +47,9 @@ class ProfileController: UIViewController {
                     print("Document does not exist")
                 }
             }
-            self.printInfo()
         }
+        
+        self.printInfo()
     }
     
     func printInfo() {

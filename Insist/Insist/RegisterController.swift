@@ -55,7 +55,9 @@ class RegisterController: UIViewController {
                 }
                 else {
                     print ("Success")
-                    
+                    let settings = db.settings
+                    settings.areTimestampsInSnapshotsEnabled = true
+                    db.settings = settings
                     db.collection("users").document("\(user.email)").setData([
                         "name": user.username,
                         "birthday": user.birthday,

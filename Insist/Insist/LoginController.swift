@@ -21,15 +21,37 @@ class LoginController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (result, error) in
             if error != nil {
-                let loginAlert = UIAlertController(title: "Can't login", message: "Your password is incorrect", preferredStyle: .alert)
+                let loginAlert = UIAlertController(title: "Can't login", message: "Your password or email address is incorrect", preferredStyle: .alert)
                 loginAlert.addAction(UIAlertAction(title: "Back", style: .default, handler: { (action: UIAlertAction!) in
                     self.navigationController?.popViewController(animated: true)
                 }))
                 self.present(loginAlert, animated: true, completion: nil)
+                //print(error)
             }
             else {
+                let emailUser = Auth.auth().currentUser
+                if let emailUser = emailUser {
+                    user.email = emailUser.email!
+                    
+                    let settings = db.settings
+                    settings.areTimestampsInSnapshotsEnabled = true
+                    db.settings = settings
+                    let docRef = db.collection("users").document("\(user.email)")
+                    docRef.getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            //let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                            let mydata = document.data()
+                            let latestbirthday = mydata!["birthday"] as? String ?? ""
+                            user.birthday = latestbirthday
+                            let latestname = mydata!["name"] as? String ?? ""
+                            user.username = latestname
+                        } else {
+                            print("Document does not exist")
+                        }
+                    }
+                }
                 print ("Success")
             }
         }
