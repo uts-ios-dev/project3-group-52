@@ -65,7 +65,9 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         record.time = runTimeLabel.text!
         if !locationList.isEmpty {
             record.startLocation = locationList.first!
+            //print(record.startLocation)
             record.endLocation = locationList.last!
+            //print(record.endLocation)
             locationList.removeAll()
         }
         record.distance = distanceLabel.text!

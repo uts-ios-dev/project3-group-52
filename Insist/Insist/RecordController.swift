@@ -11,7 +11,7 @@ import FirebaseFirestore
 import FacebookCore
 import UIKit
 
-class RecordController: UIViewController {
+class RecordController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,9 @@ class RecordController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    var recordsString = Array<String>()
+    
     func showRecord() {
-        var Ly:Int = 120
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
@@ -34,27 +35,38 @@ class RecordController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    var recordLabel: UILabel
                     print("\(document.documentID) => \(document.data())")
                     let userRecords = document.data()
                     let latestTime = userRecords["time"] as? String ?? ""
                     let latestDistance = userRecords["distance"] as? String ?? ""
-                    recordLabel = UILabel()
-                    recordLabel.text = "⏱ " + latestTime + "      🏃🏻 " + latestDistance
-                    recordLabel.sizeToFit()
-                    recordLabel.frame = CGRect(x: 70, y: Ly, width: 400, height: 20)
-                    print(latestTime)
-                    print(latestDistance)
-                    self.view.addSubview(recordLabel)
-                    Ly += 30
+                    let recordString = "             ⏱ " + latestTime + "       " + "🏃🏻 " + latestDistance
+                    self.recordsString.append(recordString)
+                    self.tableView.reloadData()
                 }
             }
         }
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return recordsString.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = recordsString[indexPath.row]
+        //cell.detailTextLabel?.textColor = UIColor.blue
+        return cell
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
