@@ -30,7 +30,7 @@ class RecordController: UITableViewController {
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
-        db.collection("users").document("\(user.email)").collection("records").getDocuments() { (querySnapshot, err) in
+        db.collection("users").document("\(user.email)").collection("records").order(by: "distance", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -39,7 +39,8 @@ class RecordController: UITableViewController {
                     let userRecords = document.data()
                     let latestTime = userRecords["time"] as? String ?? ""
                     let latestDistance = userRecords["distance"] as? String ?? ""
-                    let recordString = "             ⏱ " + latestTime + "       " + "🏃🏻 " + latestDistance
+                    let latestDate = userRecords["date"] as? String ?? ""
+                    let recordString = "🗓 " + latestDate + "    ⏱ " + latestTime + "       🏃🏻 " + latestDistance
                     self.recordsString.append(recordString)
                     self.tableView.reloadData()
                 }

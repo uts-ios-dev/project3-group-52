@@ -15,6 +15,7 @@ class Record
     var _endLocation: CLLocation = CLLocation.init()
     var _time: String = ""
     var _distance: String = ""
+    var _date: String = ""
     
     var startLocation: CLLocation
     {
@@ -61,6 +62,18 @@ class Record
         set
         {
             _distance = newValue
+        }
+    }
+    
+    var date: String
+    {
+        get
+        {
+            return _date
+        }
+        set
+        {
+            _date = newValue
         }
     }
 }

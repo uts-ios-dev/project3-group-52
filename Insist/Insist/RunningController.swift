@@ -71,6 +71,10 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
             locationList.removeAll()
         }
         record.distance = distanceLabel.text!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        record.date = dateFormatter.string(from: Date())
+        //print(record.date)
         saveData()
     }
     
@@ -80,7 +84,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         db.settings = settings
         
         if Auth.auth().currentUser != nil && AccessToken.current == nil{
-            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time])
+            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time, "date": record.date])
         }
         
         if AccessToken.current != nil {
@@ -94,7 +98,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
                         print("Document successfully written!")
                     }
             }
-            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time])
+            db.collection("users").document("\(user.email)").collection("records").document().setData(["distance": record.distance, "time": record.time, "date": record.date])
         }
     }
     
