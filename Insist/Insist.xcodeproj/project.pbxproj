@@ -12,7 +12,6 @@
 		069C815920AF23330085ECE2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C815820AF23330085ECE2 /* LoginController.swift */; };
 		069C815B20AF233F0085ECE2 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069C815A20AF233F0085ECE2 /* RegisterController.swift */; };
 		06A477EA20AC238800CCBBDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477E920AC238800CCBBDD /* AppDelegate.swift */; };
-		06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A477EB20AC238800CCBBDD /* ViewController.swift */; };
 		06A477EF20AC238800CCBBDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A477ED20AC238800CCBBDD /* Main.storyboard */; };
 		06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06A477F020AC238800CCBBDD /* Insist.xcdatamodeld */; };
 		06A477F420AC238B00CCBBDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A477F320AC238B00CCBBDD /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 		069C815A20AF233F0085ECE2 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		06A477E620AC238800CCBBDD /* Insist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A477E920AC238800CCBBDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		06A477EB20AC238800CCBBDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06A477EE20AC238800CCBBDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06A477F120AC238800CCBBDD /* Insist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Insist.xcdatamodel; sourceTree = "<group>"; };
 		06A477F320AC238B00CCBBDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Insist/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -89,7 +87,6 @@
 			children = (
 				06A4780A20AC36B800CCBBDD /* Insist.entitlements */,
 				06A477E920AC238800CCBBDD /* AppDelegate.swift */,
-				06A477EB20AC238800CCBBDD /* ViewController.swift */,
 				06A477ED20AC238800CCBBDD /* Main.storyboard */,
 				06A477F320AC238B00CCBBDD /* Assets.xcassets */,
 				06A477F520AC238B00CCBBDD /* LaunchScreen.storyboard */,
@@ -287,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				06ACD35820AC7CC300700BFC /* ProfileController.swift in Sources */,
-				06A477EC20AC238800CCBBDD /* ViewController.swift in Sources */,
 				069C815B20AF233F0085ECE2 /* RegisterController.swift in Sources */,
 				06A477F220AC238800CCBBDD /* Insist.xcdatamodeld in Sources */,
 				06E7564120ADC958005BAC9E /* FinishController.swift in Sources */,
