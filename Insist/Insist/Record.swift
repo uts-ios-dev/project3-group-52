@@ -33,11 +33,11 @@ class Record
     {
         get
         {
-            return _startLocation
+            return _endLocation
         }
         set
         {
-            _startLocation = newValue
+            _endLocation = newValue
         }
     }
     

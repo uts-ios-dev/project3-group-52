@@ -35,16 +35,13 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        let loginButton = LoginButton(publishPermissions: [.managePages, .publishPages])
-        //        loginButton.frame = CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50)
-        //        view.addSubview(loginButton)
-        //        let content = LinkShareContent.init(url: URL)
-        //        let shareButton = ShareButton(frame: CGRect(x: view.frame.width / 4, y: view.frame.height / 2 + 120, width: view.frame.width / 2, height: 50), content: content)
-        
         let startLocation = record.startLocation
-        let locValue = record.endLocation
-        let sourceLocation = CLLocationCoordinate2DMake(startLocation.coordinate.latitude, startLocation.coordinate.longitude)
-        let destinationLocation = CLLocationCoordinate2DMake(locValue.coordinate.latitude, locValue.coordinate.longitude)
+        let endLocation = record.endLocation
+        print(startLocation)
+        print(endLocation)
+        
+        let sourceLocation = CLLocationCoordinate2D(latitude: startLocation.coordinate.latitude, longitude: startLocation.coordinate.longitude)
+        let destinationLocation = CLLocationCoordinate2D(latitude: endLocation.coordinate.latitude, longitude: endLocation.coordinate.longitude)
         let sourcePin = customPin(pinTitle: "Start", pinSubTitle: "Start point", location: sourceLocation)
         let destinationPin = customPin(pinTitle: "End", pinSubTitle: "End point", location: destinationLocation)
         self.mapView.addAnnotation(sourcePin)
@@ -72,8 +69,21 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         self.mapView.delegate = self
     }
     
+    @IBAction func share(_ sender: Any) {
+        print("share")
+        let insistShare = "Share by Insist (\(record.date)): \(user.username) ran \(record.distance) today!"
+        // let image: UIImage = UIImage(named: "Home")!
+        //let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [myShare, image], applicationActivities: nil)
+        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [insistShare], applicationActivities: nil)
+        self.present(shareVC, animated: true, completion: nil)
+    }
     
-    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer (overlay: overlay)
+        renderer.strokeColor = UIColor.blue
+        renderer.lineWidth = 4.0
+        return renderer
+    }
     
     //    @IBAction func shareFB(_ sender: Any) {
     //        let content = LinkShareContent.init(url: .init(fileURLWithPath: "https://developers.facebook.com/docs/sharing/ios"))
@@ -120,22 +130,6 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     //        let content = PhotoShareContent(photos: [photo])
     //        try ShareDialog.show(from: self, content: content)
     //    }
-    
-    @IBAction func share(_ sender: Any) {
-        print("share")
-        let myShare = "Share by Insist: \(user.username) ran \(record.distance) today!"
-        // let image: UIImage = UIImage(named: "Home")!
-        //let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [myShare, image], applicationActivities: nil)
-        let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [myShare], applicationActivities: nil)
-        self.present(shareVC, animated: true, completion: nil)
-    }
-    
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer (overlay: overlay)
-        renderer.strokeColor = UIColor.blue
-        renderer.lineWidth = 4.0
-        return renderer
-    }
     
     //    func publishMessage()
     //    {

@@ -40,7 +40,7 @@ class RecordController: UITableViewController {
                     let latestTime = userRecords["time"] as? String ?? ""
                     let latestDistance = userRecords["distance"] as? String ?? ""
                     let latestDate = userRecords["date"] as? String ?? ""
-                    let recordString = "🗓 " + latestDate + "    ⏱ " + latestTime + "       🏃🏻 " + latestDistance
+                    let recordString = "🗓 " + latestDate + " ⏱ " + latestTime + " 🏃🏻 " + latestDistance
                     self.recordsString.append(recordString)
                     self.tableView.reloadData()
                 }
