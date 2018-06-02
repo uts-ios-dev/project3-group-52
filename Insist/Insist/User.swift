@@ -8,57 +8,44 @@
 
 import Foundation
 
-class User
-{
+class User {
     var _username: String = ""
     var _email: String = ""
     var _birthday: String = ""
     var _password: String = ""
     
-    var username: String
-    {
-        get
-        {
+    var username: String {
+        get {
             return _username
         }
-        set
-        {
+        set {
             _username = newValue
         }
     }
     
-    var email: String
-    {
-        get
-        {
+    var email: String {
+        get {
             return _email
         }
-        set
-        {
+        set {
             _email = newValue
         }
     }
     
-    var birthday: String
-    {
-        get
-        {
+    var birthday: String {
+        get {
             return _birthday
         }
-        set
-        {
+        set {
             _birthday = newValue
         }
     }
     
-    var password: String
-    {
-        get
-        {
+    var password: String {
+        get {
             return _password
         }
-        set
-        {
+        set {
             _password = newValue
         }
     }

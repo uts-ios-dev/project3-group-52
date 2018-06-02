@@ -9,70 +9,54 @@
 import Foundation
 import MapKit
 
-class Record
-{
+class Record {
     var _startLocation: CLLocation = CLLocation.init()
     var _endLocation: CLLocation = CLLocation.init()
     var _time: String = ""
     var _distance: String = ""
     var _date: String = ""
     
-    var startLocation: CLLocation
-    {
-        get
-        {
+    var startLocation: CLLocation {
+        get {
             return _startLocation
         }
-        set
-        {
+        set {
             _startLocation = newValue
         }
     }
 
-    var endLocation: CLLocation
-    {
-        get
-        {
+    var endLocation: CLLocation {
+        get {
             return _endLocation
         }
-        set
-        {
+        set {
             _endLocation = newValue
         }
     }
     
-    var time: String
-    {
-        get
-        {
+    var time: String {
+        get {
             return _time
         }
-        set
-        {
+        set {
             _time = newValue
         }
     }
     
-    var distance: String
-    {
-        get
-        {
+    var distance: String {
+        get {
             return _distance
         }
-        set
-        {
+        set {
             _distance = newValue
         }
     }
     
-    var date: String
-    {
-        get
-        {
+    var date: String {
+        get {
             return _date
         }
-        set
-        {
+        set {
             _date = newValue
         }
     }

@@ -40,8 +40,7 @@ class RegisterController: UIViewController {
             }))
             present(usernameAlert, animated: true, completion: nil)
         }
-        else
-        {
+        else {
             user.username = name.text!
             user.email = email.text!
             user.birthday = DateFormatter.localizedString(from: birthday.date, dateStyle: .medium, timeStyle: .none)
