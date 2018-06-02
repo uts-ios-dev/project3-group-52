@@ -23,6 +23,7 @@ class ProfileController: UIViewController {
         changeAccount = true
     }
     
+    //get and print user information
     override func viewDidLoad() {
         super.viewDidLoad()
         if AccessToken.current != nil{

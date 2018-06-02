@@ -22,14 +22,15 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
+    //close the keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
     }
     
+    //check the register information and save the information to Firebase cloud
     @IBAction func registerButton(_ sender: Any) {
         if name.text == "" || name.text == nil || email.text == "" || email.text == nil || password.text == "" || password.text == nil
         {
@@ -68,7 +69,7 @@ class RegisterController: UIViewController {
                                 self.navigationController?.popViewController(animated: true)
                             }))
                             self.present(registerAlert, animated: true, completion: nil)
-//                            print("Error writing document: \(err)")
+                            print("Error writing document: \(err)")
                         } else {
                             print("Document successfully written!")
                         }

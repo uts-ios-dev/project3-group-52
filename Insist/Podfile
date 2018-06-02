@@ -7,12 +7,10 @@ target 'Insist' do
 
 pod 'FacebookCore'
 pod 'FacebookLogin'
-pod 'FacebookShare'
 
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
-pod 'LBTAComponents'
 end

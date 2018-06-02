@@ -32,6 +32,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var runTimeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
+    //get location service and show user current location
     override func viewDidLoad() {
         super.viewDidLoad()
         runTimeLabel.text = "00:00:00"
@@ -54,30 +55,28 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         sender.isEnabled = false
         if CLLocationManager.locationServicesEnabled() {
             distance = Measurement(value: 0, unit: UnitLength.meters)
-            //locationManager.distanceFilter = 10
+            locationManager.distanceFilter = 10
             distanceLabel.isHidden = false
             distanceLabel.text = MeasurementFormatter().string(from: distance)
         }
     }
     
+    //get record location, date, and time
     @IBAction func finishButton(_ sender: Any) {
         runTimer?.invalidate()
         record.time = runTimeLabel.text!
         if !locationList.isEmpty {
-            //record.startLocation = locationList.first!
-            print(record.startLocation)
             record.endLocation = locationList.last!
-            print(record.endLocation)
             locationList.removeAll()
         }
         record.distance = distanceLabel.text!
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         record.date = dateFormatter.string(from: Date())
-        //print(record.date)
         saveData()
     }
     
+    //save record information to Firebase cloud
     func saveData() {
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
@@ -102,21 +101,18 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    //update location and distance
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for newLocation in locations {
             if locationList.isEmpty {
-                //let newLocation = locations.last! as CLLocation
                 record.startLocation = newLocation
                 locationList.append(newLocation)
             }
             else {
                 if let lastLocation = locationList.last {
-                    //let newLocation = locations.last! as CLLocation
                     let center = CLLocationCoordinate2D(latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
                     let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
                     map.setRegion(region, animated: true)
-                    let coordinates = [lastLocation.coordinate, newLocation.coordinate]
-                    map.add(MKPolyline(coordinates: coordinates, count: 2))
                     let dis = newLocation.distance(from: lastLocation)
                     distance = distance + Measurement(value: dis, unit: UnitLength.meters)
                     locationList.append(newLocation)
@@ -126,6 +122,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    //uodate time
     @objc func update() {
         sec += 1
         if sec == 60 {

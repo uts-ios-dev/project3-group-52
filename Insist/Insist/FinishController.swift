@@ -10,16 +10,13 @@ import UIKit
 import MapKit
 import FacebookLogin
 import FacebookCore
-import FacebookShare
 import FBSDKCoreKit
-import FBSDKShareKit
 import FBSDKLoginKit
 
 class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var endLocationManager = CLLocationManager()
-    //    @IBOutlet weak var shareonFB: UIButton!
     
     class customPin: NSObject,MKAnnotation {
         var coordinate: CLLocationCoordinate2D
@@ -33,6 +30,7 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         }
     }
     
+    //set the map route
     override func viewDidLoad() {
         super.viewDidLoad()
         let startLocation = record.startLocation
@@ -69,6 +67,7 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         self.mapView.delegate = self
     }
     
+    //share the record information by share button
     @IBAction func share(_ sender: Any) {
         print("share")
         let insistShare = "Share by Insist (\(record.date)): \(user.username) ran \(record.distance) today!"
@@ -84,83 +83,4 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         renderer.lineWidth = 4.0
         return renderer
     }
-    
-    //    @IBAction func shareFB(_ sender: Any) {
-    //        let content = LinkShareContent.init(url: .init(fileURLWithPath: "https://developers.facebook.com/docs/sharing/ios"))
-    //        let shareDialog = ShareDialog(content: content)
-    //        shareDialog.mode = .native
-    //        shareDialog.failsOnInvalidData = true
-    //        shareDialog.completion = { result in
-    //            // Handle share results
-    //        }
-    //
-    //
-    //        try shareDialog.show()
-    
-    //        let connection = GraphRequestConnection()
-    //        connection.add(GraphRequest(graphPath: "me/feed", parameters: ["message": "text to post on Facebook"], accessToken: AccessToken.current, httpMethod: .POST, apiVersion: .defaultVersion)) { httpResponse, result in
-    //            switch result {
-    //            case .success(let response):
-    //                print("Graph Request Succeeded: \(response)")
-    //            case .failed(let error):
-    //                print("Graph Request Failed: \(error)")
-    //            }
-    //        }
-    //        connection.start()
-    
-    //        if FBSDKAccessToken.current().hasGranted("publish_pages") {
-    //            publishMessage()
-    //        }
-    
-    //        if (!FBSDKAccessToken.current().hasGranted("publish_to_groups")) {
-    //            print("Request publish_to_groups permissions")
-    //            requestPublishPermissions()
-    //            publishMessage()
-    //        }
-    //        else {
-    //            publishMessage()
-    //        }
-    //    }
-    
-    //        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-    //            return // No image selected.
-    //        }
-    //
-    //        let photo = Photo(image: image, userGenerated: true)
-    //        let content = PhotoShareContent(photos: [photo])
-    //        try ShareDialog.show(from: self, content: content)
-    //    }
-    
-    //    func publishMessage()
-    //    {
-    //        let messageToPost = "test"
-    //
-    //        if (messageToPost.isEmpty) {
-    //            return
-    //        }
-    //
-    //        FBSDKGraphRequest.init(graphPath: "me/feed", parameters: ["message" : messageToPost], httpMethod: "POST").start(completionHandler: { (connection, result, error) -> Void in
-    //            if let error = error {
-    //                print("Error: \(error)")
-    //            } else {
-    //                print("Success")
-    //                //self.myTextView.text = ""
-    //            }
-    //        })
-    //    }
-    //
-    //    func requestPublishPermissions()
-    //    {
-    //        let login: FBSDKLoginManager = FBSDKLoginManager()
-    //
-    //        login.logIn(withPublishPermissions: ["publish_to_groups"], from: self) { (result, error) in
-    //            if (error != nil) {
-    //                print(error!)
-    //            } else if (result?.isCancelled)! {
-    //                print("Canceled")
-    //            } else if (result?.grantedPermissions.contains("publish_to_groups"))! {
-    //                print("permissions granted")
-    //            }
-    //        }
-    //    }
 }

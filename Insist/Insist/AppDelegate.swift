@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import FacebookCore
 import FacebookLogin
-import FacebookShare
 import Firebase
 
 @UIApplicationMain

@@ -19,13 +19,16 @@ class WelcomeController: UIViewController {
     
     @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var button: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //generate facebook login button
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userBirthday ])
-        loginButton.frame = CGRect(x: view.frame.width / 10, y: view.frame.height / 2 + 200, width: 300, height: 50)
+        loginButton.frame = button.frame
         view.addSubview(loginButton)
         self.logged()
+        //check whether there is any account, if so, switch to Run view controller
         if AccessToken.current != nil || Auth.auth().currentUser != nil {
             if !changeAccount {
                 self.switchToRun()
@@ -41,6 +44,7 @@ class WelcomeController: UIViewController {
         checkLoginStatus()
     }
     
+    //check whether there is any account to enter
     @IBAction func enter(_ sender: Any) {
         if AccessToken.current == nil && Auth.auth().currentUser == nil {
             let enterAlert = UIAlertController(title: "Login", message: "You must login to enter", preferredStyle: .alert)
@@ -54,6 +58,7 @@ class WelcomeController: UIViewController {
         }
     }
     
+    //check login status and get user information
     func logged() {
         if AccessToken.current != nil{
             UserProfile.loadCurrent { (profile) in
@@ -62,6 +67,7 @@ class WelcomeController: UIViewController {
                 }
                 self.getOtherInfo()
             }
+            //combine Facebook login and Firebase Auth
             let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
             Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
                 if error != nil {
@@ -73,9 +79,9 @@ class WelcomeController: UIViewController {
                 }
             }
             self.authEmailLogout()
-           // self.switchToRun()
         }
         
+        //get user information from Firebase cloud
         if Auth.auth().currentUser != nil && AccessToken.current == nil {
             let emailUser = Auth.auth().currentUser
             if let emailUser = emailUser {
@@ -87,7 +93,6 @@ class WelcomeController: UIViewController {
                 let docRef = db.collection("users").document("\(user.email)")
                 docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
-                        //let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                         let mydata = document.data()
                         let latestbirthday = mydata!["birthday"] as? String ?? ""
                         user.birthday = latestbirthday
@@ -98,10 +103,10 @@ class WelcomeController: UIViewController {
                     }
                 }
             }
-            //self.switchToRun()
         }
     }
     
+    //check whether the user logged in
     func checkLoginStatus() {
         if AccessToken.current != nil{
             let accountAlert = UIAlertController(title: "Facebook", message: "You have logged in with Facebook", preferredStyle: .alert)
@@ -123,12 +128,14 @@ class WelcomeController: UIViewController {
         }
     }
     
+    //switch to Run view controller
     func switchToRun() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    //if the use had logged in with Email then logged in with Facebook, then logout the Email account
     func authEmailLogout() {
         let firebaseAuth = Auth.auth()
         do {
@@ -138,6 +145,7 @@ class WelcomeController: UIViewController {
         }
     }
     
+    //get user Facebook information
     func getOtherInfo() {
         let connection = GraphRequestConnection()
         connection.add(GraphRequest(graphPath: "/me", parameters: ["fields":"email, birthday"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)) { httpResponse, result in

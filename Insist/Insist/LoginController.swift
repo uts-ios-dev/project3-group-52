@@ -20,6 +20,7 @@ class LoginController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    //login by Email
     @IBAction func login(_ sender: Any) {
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (result, error) in
             if error != nil {
@@ -28,7 +29,6 @@ class LoginController: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 }))
                 self.present(loginAlert, animated: true, completion: nil)
-                //print(error)
             }
             else {
                 let emailUser = Auth.auth().currentUser

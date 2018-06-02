@@ -26,6 +26,7 @@ class RecordController: UITableViewController {
     
     var recordsString = Array<String>()
     
+    //get the record from Firebase cloud and order them by distance
     func showRecord() {
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
@@ -62,7 +63,6 @@ class RecordController: UITableViewController {
     {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.textLabel?.text = recordsString[indexPath.row]
-        //cell.detailTextLabel?.textColor = UIColor.blue
         return cell
     }
     
