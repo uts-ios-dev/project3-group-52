@@ -8,10 +8,6 @@
 
 import UIKit
 import MapKit
-import FacebookLogin
-import FacebookCore
-import FBSDKCoreKit
-import FBSDKLoginKit
 
 class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -71,8 +67,6 @@ class FinishController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     @IBAction func share(_ sender: Any) {
         print("share")
         let insistShare = "Share by Insist (\(record.date)): \(user.username) ran \(record.distance) today!"
-        // let image: UIImage = UIImage(named: "Home")!
-        //let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [myShare, image], applicationActivities: nil)
         let shareVC: UIActivityViewController = UIActivityViewController(activityItems: [insistShare], applicationActivities: nil)
         self.present(shareVC, animated: true, completion: nil)
     }

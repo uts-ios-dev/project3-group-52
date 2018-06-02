@@ -55,7 +55,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         sender.isEnabled = false
         if CLLocationManager.locationServicesEnabled() {
             distance = Measurement(value: 0, unit: UnitLength.meters)
-            locationManager.distanceFilter = 10
+            //locationManager.distanceFilter = 10
             distanceLabel.isHidden = false
             distanceLabel.text = MeasurementFormatter().string(from: distance)
         }
@@ -64,6 +64,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
     //get record location, date, and time
     @IBAction func finishButton(_ sender: Any) {
         runTimer?.invalidate()
+        distanceLabel.isHidden = true
         record.time = runTimeLabel.text!
         if !locationList.isEmpty {
             record.endLocation = locationList.last!
