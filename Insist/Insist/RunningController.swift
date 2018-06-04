@@ -38,6 +38,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         runTimeLabel.text = "00:00:00"
         locationList.removeAll()
         distance = Measurement(value: 0, unit: UnitLength.meters)
+        self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
