@@ -56,7 +56,7 @@ class RunningController: UIViewController, CLLocationManagerDelegate {
         sender.isEnabled = false
         if CLLocationManager.locationServicesEnabled() {
             distance = Measurement(value: 0, unit: UnitLength.meters)
-            //locationManager.distanceFilter = 10
+            locationManager.distanceFilter = 10
             distanceLabel.isHidden = false
             distanceLabel.text = MeasurementFormatter().string(from: distance)
         }
